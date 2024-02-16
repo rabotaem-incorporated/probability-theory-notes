@@ -9,7 +9,6 @@ class Config:
     monochrome: bool = False
     debug: bool = False
     references: bool = True
-    sem3: bool = True
     strict_refs: bool = True
 
     def write_to_file(self, file):
@@ -26,16 +25,16 @@ class Config:
 
 
 targets = {
-    "calculus-default": Config(
+    "probability-theory-default": Config(
         
     ),
-    "calculus-no-references": Config(
+    "probability-theory-no-references": Config(
         references=False
     ),
-    "calculus-debug": Config(
+    "probability-theory-debug": Config(
         debug=True,
     ),
-    "calculus-monochrome": Config(
+    "probability-theory-monochrome": Config(
         monochrome=True,
     ),
 }
