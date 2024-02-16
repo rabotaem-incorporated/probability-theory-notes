@@ -9,6 +9,6 @@
 
 #show: show-references
 
-#include "sections/01-sec1/!sec.typ"
+#include "sections/01-elementary/!sec.typ"
 
 #include "appendix.typ"
