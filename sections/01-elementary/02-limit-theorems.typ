@@ -21,8 +21,8 @@
 
 #proof[
     $
-        P(S_n = k) = C_n^k p_n^k (1 - p_n)^(n - k) sim C_n^k lambda^k/n^k (1 - p^n)^(n - k) =
-        (n dot (n - 1) dot ... dot (n - k + 1))/(k!) lambda^k / (n^k) (1 - p_n)^(n - k) newline(sim)
+        P(S_n = k) = C_n^k p_n^k (1 - p_n)^(n - k) sim C_n^k lambda^k/n^k (1 - p^n)^(n - k) newline(=)
+        (n dot (n - 1) dot ... dot (n - k + 1))/(k!) lambda^k / (n^k) (1 - p_n)^(n - k) sim
         lambda^k / (k!) (1 - p_n)^(n - k) sim lambda^k / (k!) e^(-lambda).
     $
     Последний переход верен потому что $(1 - p_n)^(n - k) sim (1-p_n)^n$, и
