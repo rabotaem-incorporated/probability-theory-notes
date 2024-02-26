@@ -21,8 +21,8 @@
 
 #proof[
     $
-        P(S_n = k) = C_n^k p_n^k (1 - p_n)^(n - k) sim C_n^k lambda^k/n^k (1 - p^n)^(n - k) =
-        (n dot (n - 1) dot ... dot (n - k + 1))/(k!) lambda^k / (n^k) (1 - p_n)^(n - k) newline(sim)
+        P(S_n = k) = C_n^k p_n^k (1 - p_n)^(n - k) sim C_n^k lambda^k/n^k (1 - p^n)^(n - k) newline(=)
+        (n dot (n - 1) dot ... dot (n - k + 1))/(k!) lambda^k / (n^k) (1 - p_n)^(n - k) sim
         lambda^k / (k!) (1 - p_n)^(n - k) sim lambda^k / (k!) e^(-lambda).
     $
     Последний переход верен потому что $(1 - p_n)^(n - k) sim (1-p_n)^n$, и
@@ -57,7 +57,7 @@
 ]
 
 #th(name: "локальная теорема Маувра-Лапласа")[
-    Пусть $0 < p < 1$ и $q := 1 - p$, $n -> oo$,
+    Пусть $0 < p < 1$ и $q := 1 - p$, при $n -> oo$,
     $
         x = (k - n p) / sqrt(n p q),
     $
@@ -66,7 +66,7 @@
     $
         P(S_n = k) sim 1/(sqrt(2 pi n p q)) e^(-x^2/2)
     $
-    равномерно по $x$ в интервале $[-T, T]$.     
+    равномерно по $x$ в интервале $[-T, T]$ в схеме Бернулли с $n$ испытаниями и вероятностью успеха $p$.
 ]
 
 #proof[
@@ -80,9 +80,26 @@
     $
     Так есть стремление к бесконечности, можно писать формулу Стирлинга:
     $
-        text(#red, P(S_n = k) = n!/(k! (n - k)!) p^k q^(n - k) sim
-        (n^n cancel(e^(-n)) sqrt(cancel(pi) n))/(k^k cancel(e^(-k)) sqrt(2pi k) (n - k)^(n - k) cancel(e^(-n + k)) sqrt(2pi cancel(n))) (n - k))) p^k q^(n - k)) newline(sim)
-        (n^n p^k q^(n - k) sqrt(cancel(n)))/(k^k (n - k)^(n - k) sqrt(2pi n p) dot sqrt(cancel(n) q)) = 1/sqrt(2 pi n p q) dot (n^n p^k q^(n - k))/(k^k (n - k)^(n - k)).
+        P(S_n = k) =
+        n!/(k! (n - k)!) p^k q^(n - k) sim
+            (n^n cancel(e^(-n)) sqrt(cancel(2 pi) n))
+            /
+            (
+                k^k cancel(e^(-k)) sqrt(2pi k)
+                (n - k)^(n - k) cancel(e^(-n + k)) sqrt(cancel(2pi) (n - k))
+            )
+            dot p^k q^(n - k) 
+        newline(sim)
+            (n^n p^k q^(n - k) sqrt(cancel(n)))
+            /
+            (
+                k^k (n - k)^(n - k) sqrt(2pi n p) dot
+                sqrt(cancel(n) q)
+            ) 
+        =
+            1/sqrt(2 pi n p q) dot (n^n p^k q^(n - k))
+            /
+            (k^k (n - k)^(n - k)).
     $
     Надо показать, что последняя дробь стремиться к $e^(-x^2/2)$. Логарифмируем:
     $
