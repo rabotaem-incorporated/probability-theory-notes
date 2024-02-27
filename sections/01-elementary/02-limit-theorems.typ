@@ -81,7 +81,8 @@
     Так есть стремление к бесконечности, можно писать формулу Стирлинга:
     $
         P(S_n = k) =
-        n!/(k! (n - k)!) p^k q^(n - k) sim
+            n!/(k! (n - k)!) p^k q^(n - k)
+        sim
             (n^n cancel(e^(-n)) sqrt(cancel(2 pi) n))
             /
             (
@@ -101,7 +102,7 @@
             /
             (k^k (n - k)^(n - k)).
     $
-    Надо показать, что последняя дробь стремиться к $e^(-x^2/2)$. Логарифмируем:
+    Надо показать, что последняя дробь стремиться к $e^(-x^2/2)$. Логарифмируем (и сразу домножаем на $-1$ чтобы получить стремление к $x^2/2$):
     $
         k ln k/n + (n - k) ln(1 - k/n) - k ln p - (n - k) ln q newline(=)
         k ln (k / (n p)) + (n - k) ln ((n - k) / (n q)).
@@ -116,7 +117,7 @@
     $
         k ln (k / (n p)) + (n - k) ln ((n - k) / (n q)) newline(=)
         text(size: #0.95em,
-            (n p - x sqrt(n p q))(x sqrt(q/(n p)) - x^2 q/(2n p) + O(1/(n sqrt(n)))) + (n q - x sqrt(n p q))(-x sqrt(p/(n q)) - x^2 p/(2n q) + O(1/(n sqrt(n))))
+            (n p + x sqrt(n p q))(x sqrt(q/(n p)) - x^2 q/(2n p) + O(1/(n sqrt(n)))) + (n q - x sqrt(n p q))(-x sqrt(p/(n q)) - x^2 p/(2n q) + O(1/(n sqrt(n))))
         ) newline(=)
         text(size: #0.9em,
             x sqrt(n p q) + x^2 q - (x^2 q)/2 - x sqrt(n p q) + x^2 p - (x^2 p)/2 + O(1/sqrt(n)) = x^2 (p + q - p/2 - q/2) + O(1/sqrt(n)) = x^2/2 + O(1/sqrt(n))
