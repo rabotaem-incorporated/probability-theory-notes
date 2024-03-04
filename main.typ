@@ -10,5 +10,6 @@
 #show: show-references
 
 #include "sections/01-elementary/!sec.typ"
+#include "sections/02-general/!sec.typ"
 
 #include "appendix.typ"
