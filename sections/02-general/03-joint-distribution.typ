@@ -5,7 +5,7 @@
 #def[
     Вектор
     $ arrow(xi) = (xi_1, xi_2, ..., xi_n): Omega --> RR^n $
-    является _совместным_ или _многомерным_ распределением.
+    является _совместным_ или _многомерным_ распределением если
     $P_(arrow(xi)) = P_(xi_1, xi_2, ..., xi_n)$ --- мера на борелевских подмножествах $RR^n$: $P_(arrow(xi)) (A) = P(arrow(xi) in A)$.
 ]
 
@@ -14,7 +14,7 @@
     
     Определяет, так как если взять $B in RR$ борелевское, то $P_xi_1 (B) = P_(arrow(xi)) (B times RR^(n - 1))$.
 
-    Не наоборот, так как можно, например, рассмотреть $xi_1, xi_2: Omega --> {0, 1}$ --- подбрасывания првильной монетки. Пусть $(xi_1, xi_2): Omega --> {(0, 0), (0, 1), (1, 0), (1, 1)}$, все по $1/4$ --- тогда подбрасывания независимы, и $P_xi_1 = 1/2$, $P_xi_2 = 1/2$. Теперь пусть $xi_1 = xi_2$, подбрасывание одно. Тогда $P_xi_1 = 1/2$, $P_xi_2 = 1/2$. Восстановить $arrow(xi)$ не получается.
+    Не наоборот, так как можно, например, рассмотреть $xi_1, xi_2: Omega --> {0, 1}$ --- подбрасывания правильной монетки. Пусть $(xi_1, xi_2): Omega --> {(0, 0), (0, 1), (1, 0), (1, 1)}$, все по $1/4$ --- тогда подбрасывания независимы, и $P_xi_1 = 1/2$, $P_xi_2 = 1/2$. Теперь пусть $xi_1 = xi_2$, то есть подбрасывание одно. Тогда $P_xi_1 = 1/2$, $P_xi_2 = 1/2$. Восстановить $arrow(xi)$ не получается.
 ]
 
 #def[
@@ -40,7 +40,7 @@
             P(xi_1 in A) dot ... dot P(xi_n in A) =
             P_xi_1 (A_1) dot ... dot P_xi_n (A_n).
         $
-        Значит, на ячейках меры $P_(arrow(xi))$ и $P_xi_1 P_xi_2 ... P_xi_n$ они совпадают, значит, совпадают и на всем пространстве.
+        Значит на ячейках меры $P_(arrow(xi))$ и $P_xi_1 P_xi_2 ... P_xi_n$ совпадают, а значит они совпадают и на всем пространстве.
     - "$<==$": Из того, что есть равенство мер, следует равенство мер на ячейках, то есть независимость.
 ]
 
@@ -67,14 +67,14 @@
             F_(arrow(xi)) (x_1^((m)), x_2, ..., x_n) =
             P(xi_1 <= x_1^((m)), xi_2 <= x_2, ..., xi_n <= x_n)
             newline(-->^"непр. меры\nсверху")
-            P(Sect_(m = 1)^oo xi_1 <= x_1^((m)), xi_2 <= x_2, ..., xi_n <= x_n) = P(nothing) = 0.
+            P_(arrow(xi)) (Sect_(m = 1)^oo {xi_1 <= x_1^((m)), xi_2 <= x_2, ..., xi_n <= x_n}) = P(nothing) = 0.
         $
     3. Аналогично.
     4. Очевидно.
 ]
 
 #def[
-    _Совместная (многомерная) плотность распределения_ $p_arrow(xi) (t) >= t$, такая что
+    _Совместная (многомерная) плотность распределения_ --- функция $p_arrow(xi) (t) >= t$, такая что
     $
         F_(arrow(xi)) (arrow(x)) = integral_oo^(x_1) ... integral_oo^(x_n) p_arrow(xi) (t_1, ..., t_n) dif t_1 ... dif t_n.
     $
@@ -116,13 +116,13 @@
             Аналогично это делается в общем виде ($n > 2$), но букв будет больше. Короче, в любом случае не трудно.
 
     2.
-        - "$==>$": $F_arrow(xi) (arrow(x)) = F_(xi_1) (x_1) ... F_(xi n) (x_n)$.
-            Докажем, что $p(arrow(t)) = p_(xi_1) (t_1) ... p_(xi_n) (t_n)$ --- совметная плотность.
+        - "$==>$": $F_arrow(xi) (arrow(x)) = F_(xi_1) (x_1) ... F_(xi_n) (x_n)$.
+            Докажем, что $p(arrow(t)) = p_(xi_1) (t_1) ... p_(xi_n) (t_n)$ --- совместная плотность.
             $
                 integral_oo^(x_1) ... integral_oo^(x_n) p_arrow(xi) (t_1, ..., t_n) dif t_1 ... dif t_n =
-                integral_oo^(x_1) ... integral_oo^(x_n) p_(xi_1) (t_1) ... p_(xi_n) (t_n) dif t_1 ... dif t_n newline(=)
-                integral_oo^(x_1) p_(xi_1) (t_1) dif t_1 ... integral_oo^(x_n) p_(xi_n) (t_n) dif t_n =
-                F_(xi_1) (x_1) ... F_(xi_n) (x_n) =^"независимость" F_(arrow(xi)) (arrow(x)).
+                integral_oo^(x_1) ... integral_oo^(x_n) p_(xi_1) (t_1) dot ... dot p_(xi_n) (t_n) dif t_1 ... dif t_n newline(=)
+                integral_oo^(x_1) p_(xi_1) (t_1) dif t_1 dot ... dot integral_oo^(x_n) p_(xi_n) (t_n) dif t_n =
+                F_(xi_1) (x_1) dot ... dot F_(xi_n) (x_n) =^"независимость" F_(arrow(xi)) (arrow(x)).
             $
         - "$<==$": так же, равенства те же.
 ]
@@ -130,14 +130,14 @@
 === Отступление в теореию меры. Свертка мер.
 
 #def[
-    Пусть $mu$, $nu$ --- конечные меры на борелевских подмножествах $RR$. _Свертка_ мер $mu$ и $nu$ --- это мера $mu * nu$ на $X times X$, такая что
+    Пусть $mu$, $nu$ --- конечные меры на борелевских подмножествах $RR$. _Свертка_ мер $mu$ и $nu$ --- это мера $mu * nu$ на $RR$, такая что
     $
-        mu * nu (A) = integral_X (mu (A + y)) dif nu (y).
+        mu * nu (A) = integral_RR mu (A - y) dif nu (y).
     $
 ]
 
 #props[
-    1. $mu * nu (A) = integral_(RR^2) bb(1)_A (x - y) dif mu(x) dif nu(y)$.
+    1. $mu * nu (A) = integral_(RR^2) bb(1)_A (x + y) dif mu(x) dif nu(y)$.
     2. $mu_1 * mu_2 * ... * mu_n (A) = integral_(RR^n) bb(1)_A (x_1 + ... + x_n) dif mu_1 (x_1) ... dif mu_n (x_n)$.
     3. $mu * nu = nu * mu$.
     4. $mu_1 * (mu_2 * mu_3) = (mu_1 * mu_2) * mu_3$.
@@ -153,9 +153,9 @@
     1.
         $
             mu * nu (A) =
-            integral_RR (mu (A - y)) dif nu (y) =
-            integral_RR (integral_RR bb(1)_(A - y) (x) dif mu (x)) dif nu (y) =
-            integral_(RR^2) bb(1)_A (x - y) dif mu(x) dif nu(y).
+            integral_RR mu (A - y) dif nu (y) =
+            integral_RR integral_RR bb(1)_(A - y) (x) dif mu (x) dif nu (y) =
+            integral_(RR^2) bb(1)_A (x + y) dif mu(x) dif nu(y).
         $
     2. Аналогично + индукция.
     3. Очевидно.
@@ -179,16 +179,16 @@
     Надо доказать, что $mu * nu (A) = integral_A p(t) dif t$, то есть
     $
         mu * nu (A) =
-        integral_(RR^2) bb(1)_A (x + y) dif mu(x) dif nu(y) newline(=^?)
-        integral_(RR^2) bb(1)_A (t) p_mu (t - s) dot p_nu (s) dif s dif t.
+        integral_(RR^2) bb(1)_A (x + y) dif mu(x) dif nu(y) =^?
+        integral_(RR^2) bb(1)_A (t) p_mu (t - s) dot p_nu (s) dif s dif t newline(=)
         integral_A integral_RR p_mu (t - s) dot p_nu (s) dif s dif t =
-        integral_RR bb(1)_A (t) p(t) dif t.
+        integral_A p(t) dif t.
     $
     Преобразуем второй интеграл:
     $
-        integral_(RR^2) bb(1)_A (t) p_mu (t - s) dot p_nu (s) dif s dif t =
-        integral_(RR^2) bb(1)_A (t) p_mu (t - s) dot p_nu (s) dif t dif s newline(=^(u = t - s))
-        integral_(RR^2) bb(1)_A (u + s) p_mu (u) dot p_nu (s) dif u dif s =
+        integral_(RR^2) bb(1)_A (t) dot p_mu (t - s) dot p_nu (s) dif s dif t =
+        integral_(RR^2) bb(1)_A (t) dot p_mu (t - s) dot p_nu (s) dif t dif s newline(=^(u = t - s))
+        integral_(RR^2) bb(1)_A (u + s) dot p_mu (u) dot p_nu (s) dif u dif s =
         integral_(RR^2) bb(1)_A (u + s) dif mu(u) dif nu(s).
     $
 ]
