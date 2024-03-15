@@ -56,6 +56,7 @@
 #let Ind = math.op("Ind")
 #let Ln = math.op("Ln")
 #let Arg = math.op("Arg")
+#let cov = math.op("cov")
 
 // letters
 #let Aa = math.cal($A$)
