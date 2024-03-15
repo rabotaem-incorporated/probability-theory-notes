@@ -78,7 +78,7 @@
         k = n p + x sqrt(n p q) >= n p - T sqrt(n p q) --> +oo,\
         n - k = n q - x sqrt(n p q) >= n q - T sqrt(n p q) --> +oo.
     $
-    Так есть стремление к бесконечности, можно писать формулу Стирлинга:
+    Так как есть стремление к бесконечности, можно писать формулу Стирлинга:
     $
         P(S_n = k) =
             n!/(k! (n - k)!) p^k q^(n - k)
@@ -108,20 +108,17 @@
         k ln (k / (n p)) + (n - k) ln ((n - k) / (n q)).
     $
     Смотрим на дроби:
-    #text(size: 0.96em, $
-        k / (n p) = (n p + x sqrt(n p q)) / (n p) = 1 + x sqrt(q/(n p)) ==> ln(k/(n p)) = ln(1 + x sqrt(q/(n p))) = x sqrt(q/(n p)) - x^2 q/(2n p) + O(1/(n sqrt(n))).\
-        (n - k)/(n q) = (n q - x sqrt(n p q)) / (n q) = 1 - x sqrt(p/(n q)) ==> ln((n - k)/(n q)) = ln(1 - x sqrt(p/(n q))) = -x sqrt(p/(n q)) - x^2 p/(2n q) + O(1/(n sqrt(n))).
-    $)
+    $
+        #box(width: 5pt) k / (n p) = (n p + x sqrt(n p q)) / (n p) = 1 + x sqrt(q/(n p)) ==> ln(k/(n p)) = ln(1 + x sqrt(q/(n p))) = x sqrt(q/(n p)) - x^2 q/(2n p) + O(1/(n sqrt(n))).\
+        #box(width: 40pt) (n - k)/(n q) = (n q - x sqrt(n p q)) / (n q) = 1 - x sqrt(p/(n q)) ==> ln((n - k)/(n q)) = ln(1 - x sqrt(p/(n q))) = -x sqrt(p/(n q)) - x^2 p/(2n q) + O(1/(n sqrt(n))).
+    $
 
     Подставляем в сумму:
     $
-        k ln (k / (n p)) + (n - k) ln ((n - k) / (n q)) newline(=)
-        text(size: #0.95em,
-            (n p + x sqrt(n p q))(x sqrt(q/(n p)) - x^2 q/(2n p) + O(1/(n sqrt(n)))) + (n q - x sqrt(n p q))(-x sqrt(p/(n q)) - x^2 p/(2n q) + O(1/(n sqrt(n))))
-        ) newline(=)
-        text(size: #0.9em,
-            x sqrt(n p q) + x^2 q - (x^2 q)/2 - x sqrt(n p q) + x^2 p - (x^2 p)/2 + O(1/sqrt(n)) = x^2 (p + q - p/2 - q/2) + O(1/sqrt(n)) = x^2/2 + O(1/sqrt(n))
-        ).
+        k ln (k / (n p)) + (n - k) ln ((n - k) / (n q)) = \
+        #box(width : 20pt) (n p + x sqrt(n p q))(x sqrt(q/(n p)) - x^2 q/(2n p) + O(1/(n sqrt(n)))) + (n q - x sqrt(n p q))(-x sqrt(p/(n q)) - x^2 p/(2n q) + O(1/(n sqrt(n)))) =
+        \
+        #box(width : 52pt) x sqrt(n p q) + x^2 q - (x^2 q)/2 - x sqrt(n p q) + x^2 p - (x^2 p)/2 + O(1/sqrt(n)) = x^2 (p + q - p/2 - q/2) + O(1/sqrt(n)) = x^2/2 + O(1/sqrt(n))
     $
 ]
 
@@ -190,7 +187,7 @@
     Чуть позже у нас появится центральная предельная теорема, которая дает более общий результат.
 ]
 
-#th(name: "Оценка на скорость сходимости (Частный случай теореммы Берии-Эссеена)")[
+#th(name: "Оценка на скорость сходимости (Частный случай теореммы Берри-Эссеена)")[
     $
         sup_(x in RR) abs(P((S_n - n p)/sqrt(n p q) <= x) - 1/sqrt(2 pi) integral_(-oo)^x e^(-t^2/2) dif t) <=
         (p^2 + q^2)/(sqrt(n p q)) dot 1/2.
@@ -226,7 +223,7 @@
 #notice[
     2. Можно понять, что если немного шевелить $a$ и $b$, то можно улушать формулу, подгоняя интеграл под дискретную величину. Знаем,
         $
-            P(S_n >= y) = P((S_n - n p)/(sqrt(n p q)) <= (y - n p)/(sqrt(n p q))) approx 1/sqrt(2pi) integral_(-oo)^((y - n p)/(sqrt(n p q))) e^(-t^2/2) dif t.
+            P(S_n <= y) = P((S_n - n p)/(sqrt(n p q)) <= (y - n p)/(sqrt(n p q))) approx 1/sqrt(2pi) integral_(-oo)^((y - n p)/(sqrt(n p q))) e^(-t^2/2) dif t.
         $
         Получается лучше брать полуцелые $y$.
 ]
