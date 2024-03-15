@@ -127,7 +127,7 @@
         - "$<==$": так же, равенства те же.
 ]
 
-=== Отступление в теореию меры. Свертка мер.
+=== Отступление в теорию меры. Свертка мер.
 
 #def[
     Пусть $mu$, $nu$ --- конечные меры на борелевских подмножествах $RR$. _Свертка_ мер $mu$ и $nu$ --- это мера $mu * nu$ на $RR$, такая что
@@ -202,7 +202,7 @@
 #proof[
     Пусть $B subset RR^2$ такое, что $(x, y) in B$ тогда и только тогда, когда $x + y in A$
     $
-        p_(xi + eta) (t) = P(xi + eta in A) = P_((xi, eta) in B)) = P_(xi, eta) (B) = integral_(RR^2) bb(1)_B (x, y) dif P_(xi, eta) (x, y) newline(=)
+        p_(xi + eta) (t) = P(xi + eta in A) = P ((xi, eta) in B)) = P_(xi, eta) (B) = integral_(RR^2) bb(1)_B (x, y) dif P_(xi, eta) (x, y) newline(=)
         integral_(RR^2) bb(1)_A (x + y) dif P_(xi) (x) dif P_(eta) (y) = P_(xi) * P_(eta) (t).
     $
 ]
