@@ -161,6 +161,7 @@
     - $xi: Omega --> [a, b]$.
     - $ p_xi (t) = 1/(b - a) bb(1)_[a, b] (t) = cases(1/(b - a) "при" t in [a, b], 0 "иначе"). $
     - Обозначается $xi sim U(a, b)$.
+    #subgraph(label: [$p_xi (t), xi sim U(-1; 1)$], domain: (-2, 2), t => if (t < 1 and t > -1) {1 / 2} else {0})
 ]
 
 #example(name: "Нормальное распределение")[
@@ -170,6 +171,7 @@
     - Обозначается $xi sim Nn(a, sigma^2)$.
     - _Стандартное нормальное распределение_: $Nn(0, 1)$.
     - $Phi(x) := 1/sqrt(2 pi) integral_oo^x e^(-t^2/2) dif t$ --- функция распределения для стандартного нормального распределения.
+    #subgraph(label: [$p_xi (t), xi sim Nn(0, 1)$], domain: (-4, 4), t => 1/(calc.sqrt(2 * calc.pi)) * calc.exp(-t*t / 2))
 ]
 
 #notice[
@@ -197,4 +199,5 @@
     - $xi: Omega --> [0, +oo)$.
     - $ p_xi (t) = lambda e^(-lambda t) bb(1)_[0, +oo) (t) = cases(lambda e^(-lambda t) "при" t >= 0, 0 "иначе"). $
     - Обозначается $xi sim op("Exp")(lambda)$.
+    #subgraph(label: [$p_xi (t), xi sim op("Exp")(1)$], domain: (-1, 7), t => if (t >= 0) { calc.exp(-t) } else { 0 })
 ]

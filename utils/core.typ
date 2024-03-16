@@ -1,5 +1,5 @@
 #import "../config.typ"
-#import "@preview/cetz:0.1.2"
+#import "@preview/cetz:0.2.0"
 
 #let chapter_state = state("chapter", "")
 
@@ -397,3 +397,13 @@
     ticket-counter.update(post-step-fn)
   }
 }
+
+#let subgraph(label: [], domain: (), size: (10, 5), samples: 400, func) = align(center, cetz.canvas({
+    import cetz.plot: *
+    import cetz.draw: *
+    
+    plot(name: "plot", axis-style: "school-book", size: size, x-tick-step: 1, y-tick-step: 0.1, {
+    add-fill-between(domain: domain, samples: samples, func, (x) => 0)
+    })
+    content(((0,-1), "-|", "plot.south"), label)
+}))
