@@ -40,8 +40,8 @@
             P(xi_1 in A) dot ... dot P(xi_n in A) =
             P_xi_1 (A_1) dot ... dot P_xi_n (A_n).
         $
-        Значит на ячейках меры $P_(arrow(xi))$ и $P_xi_1 P_xi_2 ... P_xi_n$ совпадают, а значит они совпадают и на всем пространстве.
-    - "$<==$": Из того, что есть равенство мер, следует равенство мер на ячейках, то есть независимость.
+        Значит на измеримых прямоугольниках меры $P_(arrow(xi))$ и $P_xi_1 P_xi_2 ... P_xi_n$ совпадают, а значит они совпадают и на всем пространстве.
+    - "$<==$": Из того, что есть равенство мер, следует равенство мер на прямоугольниках, то есть независимость.
 ]
 
 #def[
@@ -74,9 +74,9 @@
 ]
 
 #def[
-    _Совместная (многомерная) плотность распределения_ --- функция $p_arrow(xi) (t) >= t$, такая что
+    _Совместная (многомерная) плотность распределения_ --- функция $p_arrow(xi) (t) >= 0$, такая что
     $
-        F_(arrow(xi)) (arrow(x)) = integral_oo^(x_1) ... integral_oo^(x_n) p_arrow(xi) (t_1, ..., t_n) dif t_1 ... dif t_n.
+        F_(arrow(xi)) (arrow(x)) = integral_oo^(x_1) ... integral_oo^(x_n) p_arrow(xi) (t_1, ..., t_n) dif t_n ... dif t_1.
     $
 ]
 
@@ -119,8 +119,8 @@
         - "$==>$": $F_arrow(xi) (arrow(x)) = F_(xi_1) (x_1) ... F_(xi_n) (x_n)$.
             Докажем, что $p(arrow(t)) = p_(xi_1) (t_1) ... p_(xi_n) (t_n)$ --- совместная плотность.
             $
-                integral_oo^(x_1) ... integral_oo^(x_n) p_arrow(xi) (t_1, ..., t_n) dif t_1 ... dif t_n =
-                integral_oo^(x_1) ... integral_oo^(x_n) p_(xi_1) (t_1) dot ... dot p_(xi_n) (t_n) dif t_1 ... dif t_n newline(=)
+                integral_oo^(x_1) ... integral_oo^(x_n) p_arrow(xi) (t_1, ..., t_n) dif t_n ... dif t_1 =
+                integral_oo^(x_1) ... integral_oo^(x_n) p_(xi_1) (t_1) dot ... dot p_(xi_n) (t_n) dif t_n ... dif t_1 newline(=)
                 integral_oo^(x_1) p_(xi_1) (t_1) dif t_1 dot ... dot integral_oo^(x_n) p_(xi_n) (t_n) dif t_n =
                 F_(xi_1) (x_1) dot ... dot F_(xi_n) (x_n) =^"независимость" F_(arrow(xi)) (arrow(x)).
             $
@@ -180,7 +180,7 @@
     $
         mu * nu (A) =
         integral_(RR^2) bb(1)_A (x + y) dif mu(x) dif nu(y) =^?
-        integral_(RR^2) bb(1)_A (t) p_mu (t - s) dot p_nu (s) dif s dif t newline(=)
+        integral_(RR^2) bb(1)_A (t) dot p_mu (t - s) dot p_nu (s) dif s dif t newline(=)
         integral_A integral_RR p_mu (t - s) dot p_nu (s) dif s dif t =
         integral_A p(t) dif t.
     $
@@ -196,20 +196,20 @@
 === Отступление закончилось, возвращаемся к теорверу (это не следует делать подзаголовком, не так ли?)
 
 #th[
-    Если $xi$, $eta$ независимы, то $p_(xi + eta) (t) = p_(xi) * p_(eta) (t)$.
+    Если $xi$, $eta$ независимы, то $P_(xi + eta) (t) = P_(xi) * P_(eta) (t)$.
 ]
 
 #proof[
     Пусть $B subset RR^2$ такое, что $(x, y) in B$ тогда и только тогда, когда $x + y in A$
     $
-        p_(xi + eta) (t) = P(xi + eta in A) = P ((xi, eta) in B)) = P_(xi, eta) (B) = integral_(RR^2) bb(1)_B (x, y) dif P_(xi, eta) (x, y) newline(=)
+        P_(xi + eta) (t) = P(xi + eta in A) = P ((xi, eta) in B)) = P_(xi, eta) (B) = integral_(RR^2) bb(1)_B (x, y) dif P_(xi, eta) (x, y) newline(=)
         integral_(RR^2) bb(1)_A (x + y) dif P_(xi) (x) dif P_(eta) (y) = P_(xi) * P_(eta) (t).
     $
 ]
 
 #examples[
     1. Свертка с дискретным распределением:
-        Пусть
+        пусть
         $
             delta_x (A) = cases(0 "если" x in.not A, 1 "если" x in A),
         $
@@ -219,7 +219,7 @@
         $
     2. $xi_i sim op("Poisson") (lambda_i)$, $xi_1$ и $xi_2$ независимы. Тогда
         $
-            P_(xi_2) = sum_(k = 0)^oo (lambda_2^k dot e^(-lambda))/(k!).
+            P_(xi_2) = sum_(k = 0)^oo (lambda_2^k dot e^(-lambda))/(k!),
         $
         и
         $
