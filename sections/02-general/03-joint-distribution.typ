@@ -219,7 +219,7 @@
         $
     2. $xi_i sim op("Poisson") (lambda_i)$, $xi_1$ и $xi_2$ независимы. Тогда
         $
-            P_(xi_2) = sum_(k = 0)^oo (lambda_2^k dot e^(-lambda))/(k!),
+            P_(xi_i) = sum_(k = 0)^oo (lambda_i^k dot e^(-lambda))/(k!),
         $
         и
         $
