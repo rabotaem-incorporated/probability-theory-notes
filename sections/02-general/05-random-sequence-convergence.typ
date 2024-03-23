@@ -54,11 +54,31 @@
 ]
 
 #th[
-    #TODO[картинка андрея]
+    #figure[
+        #cetz.canvas({
+            import cetz.draw: *
+
+            rect((0, 0.3), (4, 1.8), name: "rect1")
+            rect((-1, -1.8), (4, -0.3), name: "rect2")
+            rect((6, -0.75), (10, 0.75), name: "rect3")
+            rect((12, -0.75), (16, 0.75), name: "rect4")
+
+            set-style(stroke: (thickness: 2pt), fill: black)
+
+            line((to: "rect1.east", rel: (0.3, 0.0)), (to: "rect3.west", rel: (-0.3, 0.225)), mark: (end: ">"))
+            line((to: "rect2.east", rel: (0.3, 0.0)), (to: "rect3.west", rel: (-0.3, -0.225)), mark: (end: ">"))
+            line((to: "rect3.east", rel: (0.3, 0.0)), (to: "rect4.west", rel: (-0.3, 0.0)), mark: (end: ">"))
+
+            content("rect1.center", align(center)[1. Сходимость \ почти наверное])
+            content("rect2.center", align(center)[2. Сходимость в \ среднем порядка $r$])
+            content("rect3.center", align(center)[3. Сходимость по \ вероятности])
+            content("rect4.center", align(center)[4. Сходимость по \ распределению])
+        })
+    ]
 ]
 
 #proof[
-    - "$1==>3$": теорема Лебега из матана.
+    - "$1==>3$": теорема Лебега из матана (вероятностная мера всегда конечна).
 
     - "$2==>3$": рассмотрим $P(abs(xi_n - xi) >= eps) = P(abs(xi_n - xi)^r >= eps^r) <= (E abs(xi_n - xi)^r) / eps^r --> 0$.
 
@@ -69,7 +89,7 @@
 
     - "$3==>4$": ${xi_n > x} supset {xi > x + eps} sect {abs(xi_n - xi) < eps}$.  Взяв дополнения, ${xi_n <= x} subset {xi <= x + eps} union {abs(xi_n - xi) >= eps}$. Отсюда 
         $
-            P(xi_n <= x) <= P(xi <= xi+eps) + P(abs(xi_n - xi) >= eps) ==> F_(xi_n) (x) <= F_xi (x + eps) + P(abs(xi_n - n) <= eps) newline(==>)
+            P(xi_n <= x) <= P(xi <= x+eps) + P(abs(xi_n - xi) >= eps) ==> F_(xi_n) (x) <= F_xi (x + eps) + P(abs(xi_n - n) <= eps) newline(==>)
             limsup F_(xi_n) (x) <= F_xi (x + eps) + underbrace(limsup P(abs(xi_n - xi) >= eps), 0) = F_xi (x + eps).
         $
         С другой стороны, ${xi_n <= x} supset {xi <= x - eps} sect {abs(xi_n - xi) < eps}$, откуда ${xi_n > x} subset {xi > x + eps} union {abs(xi_n - xi) >= eps}$, и
