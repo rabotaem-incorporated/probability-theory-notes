@@ -47,3 +47,17 @@ jobs:
           tag_name: ${{ steps.tag_version.outputs.new_tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Gather PDF files in the directory
+        run: |
+          mkdir -p to_send/${{ vars.FTP_FOLDER }}/v${{ env.date }}-${{ env.sha }}
+          cp *.pdf to_send/${{ vars.FTP_FOLDER }}/v${{ env.date }}-${{ env.sha }}
+          mkdir -p to_send/${{ vars.FTP_FOLDER }}/latest
+          cp *.pdf to_send/${{ vars.FTP_FOLDER }}/latest
+      - name: Upload files to FTP server
+        uses: sebastianpopp/ftp-action@v2.0.0
+        with:
+          host: ${{ secrets.FTP_SERVER_HOST }}
+          user: ${{ secrets.FTP_SERVER_USER }}
+          password: ${{ secrets.FTP_SERVER_PASSWORD }}
+          localDir: "to_send"
+          remoteDir: "/files/notes"
