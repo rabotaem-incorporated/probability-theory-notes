@@ -1,5 +1,5 @@
 #import "../config.typ"
-#import "@preview/cetz:0.2.0"
+#import "@preview/cetz:0.1.2"
 
 #let chapter_state = state("chapter", "")
 
@@ -148,24 +148,24 @@
 
   let typ-label = label
   (name: none, label: none, plural: false, content, glue: false) => {
-    locate(loc => {
-      let lt = last_theorem.at(loc)
+    context {
+      let lt = last_theorem.at(here())
       // [Value: #lt]
-      let th_label = query(selector(<end-of-last-th>).before(loc), loc)
+      let th_label = query(selector(<end-of-last-th>).before(here()))
       let last_th_page = if th_label.len() > 0 { 
         th_label.last().location().page()
       } else { 
         -1
       }
 
-      if (glue or lt in glues_to) and last_th_page == loc.page() { 
+      if (glue or lt in glues_to) and last_th_page == here().page() { 
         if not config.monochrome {
           v(-0.4em)
         } else {
           v(-0.4em + 1pt)
         }
       }
-    })
+    }
 
     last_theorem.update(th_type)
 
@@ -248,11 +248,11 @@
     if "id" not in it.value { return it }
     if it.value.id != "rf" { return it }
     let args = it.value.args
-    return super(locate(loc => {
+    return super(context {
       let lbl = args.pos().at(0)
       let sublabel = args.pos().at(1, default: none)
       let lbl = label("_THEOREM_" + lbl)
-      let label-instance = query(lbl, loc)
+      let label-instance = query(lbl)
       if label-instance.len() != 1 {
         if config.strict-refs {
           panic("Label " + str(lbl) + " have been seen " + str(label-instance.len()) + " times")
@@ -265,8 +265,7 @@
       if sublabel != none {
         let sublabels = query(
           selector(label("_THEOREM_SUBLABEL_" + sublabel))
-            .after(label-instance.location()),
-          loc
+            .after(label-instance.location())
         )
         if sublabels.len() != 0 {
           sublabel = sublabels.first()
@@ -283,7 +282,7 @@
           box(circle(radius: 2pt, stroke: none, fill: color))
         )
       }
-    }))
+    })
   }
   content
 }
@@ -335,8 +334,6 @@
     "Свойство", "Свойства", "Замечание"
   )
 )
-
-#let proof-left-to-the-reader = proof.with[Доказательство остается читателю в качестве упражнения. <todo-like> ]
 
 #import "shortcuts.typ": *
 
@@ -397,13 +394,3 @@
     ticket-counter.update(post-step-fn)
   }
 }
-
-#let subgraph(label: [], domain: (), size: (10, 5), samples: 400, func) = align(center, cetz.canvas({
-    import cetz.plot: *
-    import cetz.draw: *
-    
-    plot(name: "plot", axis-style: "school-book", size: size, x-tick-step: 1, y-tick-step: 0.1, {
-    add-fill-between(domain: domain, samples: samples, func, (x) => 0)
-    })
-    content(((0,-1), "-|", "plot.south"), label)
-}))
