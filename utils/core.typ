@@ -1,5 +1,5 @@
 #import "../config.typ"
-#import "@preview/cetz:0.1.2"
+#import "@preview/cetz:0.2.0"
 
 #let chapter_state = state("chapter", "")
 
