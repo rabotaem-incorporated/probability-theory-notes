@@ -46,7 +46,7 @@
 
   6. $phi_xi (t + h) - phi_xi (t) = E e^(i (t + h) xi) - E e^(i t xi) = E (e^(i t xi) (e^(i h xi) - 1))$. Значит
     $
-      abs(phi_xi (t + h) - phi_xi (t)) <= E abs(e^(i t xi) (e^(i h xi) - 1)) <= E abs(e^(i t xi) - 1) -->^?_(h -> 0) 0.
+      abs(phi_xi (t + h) - phi_xi (t)) <= E abs(e^(i t xi) (e^(i h xi) - 1)) <= C E abs(e^(i h xi) - 1) -->^?_(h -> 0) 0.
     $
     Чтобы доказать $?$, надо объяснить, почему мы можем переставлять интеграл (матожидание) с пределом (по $h$).
     $
@@ -127,8 +127,8 @@
   $
     cases(
       E xi^2 = -phi''_xi (0),
-      E xi = phi'_xi (0),
-    ) ==> D xi = E xi^2 - (E xi)^2.
+      E xi = i phi'_xi (0),
+    ) ==> D xi = E xi^2 - (E xi)^2 = -phi''_xi (0) + (phi'_xi (0))^2.
   $
 ]
 
@@ -148,7 +148,7 @@
     integral_RR lim_(h -> 0) (sin(x h)/h)^2 dif P_xi (x) <=^"Фату"
     liminf_(h -> 0) integral_RR (sin(x h)/h)^2 dif P_xi (x) newline(=)
     liminf_(h -> 0) -integral_RR (e^(2 i h x) + e^(-2i h x) - 2)/(4h^2) dif P_xi (x) =
-    liminf_(h -> 0) -1/(4h^2) integral_RR e^(2 i h x) + e^(-2i h x) - 2) dif P_xi (x) newline(=)
+    liminf_(h -> 0) -1/(4h^2) integral_RR e^(2 i h x) + e^(-2i h x) - 2 dif P_xi (x) newline(=)
     liminf_(h -> 0) -1/(4h^2) (phi_xi (2h) + phi_xi (-2h) - 2).
   $
   Разложим $phi_xi (t)$ в ряд Тейлора:
@@ -198,13 +198,13 @@
   $
     Phi_T (x) =
     integral_(-T)^T (e^(i t) - e^(-i t))/(i t) e^(i t x) dif t =
-    integral_(-T)^T integral_(-1)^1 e^(i u t) dif u e^(i t x) dif t =^"Фубини"_"+очев."
+    integral_(-T)^T integral_(-1)^1 e^(i u t) dif u space e^(i t x) dif t =^"Фубини"_"+очев."
     integral_(-1)^1 integral_(-T)^T e^(i u t) e^(i t x) dif t dif u newline(=)
     integral_(-1)^1 lr(e^(i t (u + x))/(i (u + x)) |)_(t = -T)^(t = +T) dif u =
     integral_(-1)^1 (2 sin (T (u + x)))/(u + x) dif u =^(y = T (u + x))
     integral_(T (x - 1))^(T (x + 1)) (2 sin y)/y dif y.
   $
-  При $x > 1$, $T(1 + x) "и" T(x - 1) --> +oo$, а если $x < -1$, то $T(1 + x) "и" T(x - 1) --> -oo$, значит $Phi_+ (x) = 0$. При $-1 < x < 1$:
+  При $x > 1$, $T(1 + x)$ и $T(x - 1) --> +oo$, а если $x < -1$, то $T(1 + x)$ и $T(x - 1) --> -oo$, значит $Phi_+ (x) = 0$. При $-1 < x < 1$:
   $
     cases(
       T(1 + x) --> +oo,
@@ -213,7 +213,7 @@
   $
   Значит $Phi_T (x) --> 2pi dot bb(1) (x)$ при $x != plus.minus 1$. Тогда
   $
-    integral_(T --> +oo) 1/(2pi) integral_(-T)^T (e^(i t) - e^(-i t))/(i t) phi_xi (t) dif t =
+    lim_(T --> +oo) 1/(2pi) integral_(-T)^T (e^(i t) - e^(-i t))/(i t) phi_xi (t) dif t =
     lim_(T -> +oo) 1/(2pi) integral_RR Phi_T (x) dif P_xi (x) newline(=^?)
     1/(2pi) integral_RR lim_(T -> +oo) Phi_T (x) dif P_xi (x) =
     1/cancel(2pi) integral_RR cancel(2 pi) bb(1)_[-1, 1] dif P_xi (x) =
@@ -229,13 +229,13 @@
   $
 
   *Шаг 2: произвольные $a, b$*. Рассмотрим $eta$ такое, что
-  $xi = (b - a)/2 eta + (a + b)/2$. Оно лежит в $[-1, 1]$. Тогда 
+  $xi = (b - a)/2 eta + (a + b)/2$. $[a, b]$ переходит в $[-1, 1]$. Тогда 
   $
     phi_xi (t) = phi_eta ((b - a)/2 t) e^(i (a + b)/2 t).
   $
   Подставляем это в доказанное:
   $
-    P(a <= xi <= b) = P(-1 <= eta <+ 1) = lim_(T -> +oo) 1/(2pi) integral_(-T)^T (e^(-i t) - e^(i t))/(i t) phi_eta dif t.
+    P(a <= xi <= b) = P(-1 <= eta < 1) = lim_(T -> +oo) 1/(2pi) integral_(-T)^T (e^(-i t) - e^(i t))/(i t) phi_eta dif t.
   $
   Надо доказать, что
   $
@@ -245,8 +245,8 @@
   Подставляем $phi_xi$:
   $
     integral_(-T)^T (e^(-i a t) - e^(-i b t))/(i t) phi_xi dif t =
-    integral_(-T)^T (e^(-i a t) - e^(-i b t))/(i t) phi_eta ((b - a)/2 t) e^(i (a + b)/2 t) dif t =
-    integral_(-T)^T (e^((b - a)/2 t) - e^(-(b - a)/2 t))/(i t) phi_eta ((b - a)/2 t) dif t.
+    integral_(-T)^T (e^(-i a t) - e^(-i b t))/(i t) phi_eta ((b - a)/2 t) e^(i (a + b)/2 t) dif t newline(=)
+    integral_(-T)^T (e^(i (b - a)/2 t) - e^(- i (b - a)/2 t))/(i t) phi_eta ((b - a)/2 t) dif t = integral_(-(b-a)/2 T)^((b - a)/2 T) (e^(i tau) - e^(-i tau)) / (i tau) phi_eta (tau) dif tau.
   $
 ]
 

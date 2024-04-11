@@ -14,7 +14,7 @@
 
   2. $G_xi (t) = E t^xi$.
   3. Ряд абсолютно сходится при $abs(t) <= 1$.
-  4. $G'_xi (t) = E xi$.
+  4. $G'_xi (1) = E xi$.
   5. $E xi^2 = G''_xi (1) + G'_xi (1)$ (а значит $D xi = G''_xi (1) + G'_xi (1) - (G'_xi (1))^2$).
   6. Если $xi$ и $eta$ независимы, то $G_(xi + eta) (t) = G_xi (t) G_eta (t)$. Если $xi_1$, $xi_2$, ..., $xi_n$ независимы, то $G_(xi_1 + xi_2 + ... + xi_n) (t) = G_xi_1 (t) G_xi_2 (t) ... G_xi_n (t)$.
 ]
@@ -24,8 +24,8 @@
 
   2. $E t^xi = integral_RR t^x dif P_xi (x) = sum_(k = 0)^oo P(xi = k) dot t^k$.
   3. Потому что в единице сходится.
-  4. $G'_xi (t) = sum_(k = 0)^oo k P(xi = k) t^(k - 1) ==> G'_xi (1) = sum_(k = 1)^oo k P(xi = k) = E xi$.
-  5. $G''_xi (t) = sum_(k = 1)^oo k (k - 1) P(xi = k) t^(k - 2) ==> G''_xi (1) = sum_(k = 1)^oo k (k - 1) P(xi = k)$. Таким образом, $G''_xi (1) = E xi^2 - E xi$.
+  4. $G'_xi (t) = sum_(k = 0)^oo k P(xi = k) t^(k - 1) ==> G'_xi (1) = sum_(k = 0)^oo k P(xi = k) = E xi$.
+  5. $G''_xi (t) = sum_(k = 0)^oo k (k - 1) P(xi = k) t^(k - 2) ==> G''_xi (1) = sum_(k = 0)^oo k (k - 1) P(xi = k)$. Таким образом, $G''_xi (1) = E xi^2 - E xi$.
 
   6. $G_(xi + eta) (t) = E t^(xi + eta) = E(t^xi e^eta) = E t^xi E t^eta = G_xi (t) G_eta (t)$. Для $n$ по индукции.
 ]
