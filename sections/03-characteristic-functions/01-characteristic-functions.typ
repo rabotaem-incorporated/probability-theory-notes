@@ -46,7 +46,7 @@
 
   6. $phi_xi (t + h) - phi_xi (t) = E e^(i (t + h) xi) - E e^(i t xi) = E (e^(i t xi) (e^(i h xi) - 1))$. Значит
     $
-      abs(phi_xi (t + h) - phi_xi (t)) <= E abs(e^(i t xi) (e^(i h xi) - 1)) <= C E abs(e^(i h xi) - 1) -->^?_(h -> 0) 0.
+      abs(phi_xi (t + h) - phi_xi (t)) <= E abs(e^(i t xi) (e^(i h xi) - 1)) <= E abs(e^(i h xi) - 1) -->^?_(h -> 0) 0.
     $
     Чтобы доказать $?$, надо объяснить, почему мы можем переставлять интеграл (матожидание) с пределом (по $h$).
     $
@@ -204,7 +204,7 @@
     integral_(-1)^1 (2 sin (T (u + x)))/(u + x) dif u =^(y = T (u + x))
     integral_(T (x - 1))^(T (x + 1)) (2 sin y)/y dif y.
   $
-  При $x > 1$, $T(1 + x)$ и $T(x - 1) --> +oo$, а если $x < -1$, то $T(1 + x)$ и $T(x - 1) --> -oo$, значит $Phi_+ (x) = 0$. При $-1 < x < 1$:
+  При $x > 1$, $T(1 + x)$ и $T(x - 1) --> +oo$, а если $x < -1$, то $T(1 + x)$ и $T(x - 1) --> -oo$, значит $Phi_T (x) -->_(T-->+oo) 0$. При $-1 < x < 1$:
   $
     cases(
       T(1 + x) --> +oo,
