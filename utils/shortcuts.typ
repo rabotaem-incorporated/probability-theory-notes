@@ -21,6 +21,9 @@
 #let INT(f, E: $E$, mu: $mu$) = $ integral_#E #f dif #mu $
 #let newline(cont) = $#cont \ #cont$
 #let neg(x) = math.overline(x)
+#let Exp = math.op("Exp")
+#let Bern = math.op("Bern")
+#let Geom = math.op("Geom")
 
 // set fix
 #let nothing = math.diameter

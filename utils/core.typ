@@ -102,7 +102,7 @@
 
   show "≥": "⩾"
   show "≤": "⩽"
-   
+
   [
     #clabel("start")
     #align(center + horizon)[

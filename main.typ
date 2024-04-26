@@ -12,5 +12,6 @@
 #include "sections/01-elementary/!sec.typ"
 #include "sections/02-general/!sec.typ"
 #include "sections/03-characteristic-functions/!sec.typ"
+#include "sections/04-descrete-random-processes/!sec.typ"
 
 #include "appendix.typ"
