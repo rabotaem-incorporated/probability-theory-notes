@@ -279,7 +279,7 @@
     P(a <= xi <= b) =
     1/(2pi) integral_RR (e^(-i a t) - e^(-i b t))/(i t) phi_xi (t) dif t =
     1/(2pi) integral_RR integral_a^b e^(-i t u) phi_xi (t) dif u dif t newline(=^"Фубини")
-    1/(2pi) integral_a^b underbrace(integral_RR e^(-i t u) phi_xi (t) dif t, p_xi (u)) dif u =
+     integral_a^b underbrace(1/(2pi) integral_RR e^(-i t u) phi_xi (t) dif t, p_xi (u)) dif u =
     integral_a^b p_xi (u) dif u.
   $
   Значит $p_xi$ --- плотность меры $P_xi$. 
@@ -304,7 +304,7 @@
   $
   Получаем
   $
-    phi_xi (t) = underbrace(e^(i a_0 t) dot e^(i a_1 c_1 t) dot e^(i a_2 c_2 t) dot ... dot e^(i a_n c_n t), e^(i a t)) dot underbrace(e^(-sigma_1^2 c_1^2 t^2/2) dot e^(-sigma_2^2 c_2^2 t^2/2) dot ... dot e^(-sigma_n^2 c_n^2 t^2/2), e^(-sigma^2 t^2 / 2)) =
+    phi_xi (t) = underbrace(e^(i a_0 t) dot e^(i a_1 c_1 t) dot e^(i a_2 c_2 t) dot ... dot e^(i a_n c_n t), e^(i a t)) dot underbrace(e^(-sigma_1^2 c_1^2 t^2/2) dot e^(-sigma_2^2 c_2^2 t^2/2) dot ... dot e^(-sigma_n^2 c_n^2 t^2/2), e^(-sigma^2 t^2 / 2)) newline(=)
     e^(i a t) dot e^(-sigma^2 t^2 / 2) = phi_eta (t).
   $
   Значит $eta sim Nn (a, sigma^2)$.
