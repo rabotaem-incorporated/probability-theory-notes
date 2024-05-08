@@ -59,7 +59,7 @@
     $
     Почему?
     - "$supset$": пусть $omega in Sect_(n = 1)^oo Union_(k = n)^oo A_k$. Тогда $omega in union_(k = n)^oo A_k$ для любого $n$, а значит $omega in A_k$ для бесконечного количества $k$.
-    - "$subset$": пусть $omega in A_j$ для бесконечного $j$. Тогда $omega in Union_(k = n)^oo A_k$ для любого $n$, и $omega in Sect_(n = 1)^oo Union_(k = n)^oo A_k$.
+    - "$subset$": пусть $omega in A_j$ для бесконечного числа $j$. Тогда $omega in Union_(k = n)^oo A_k$ для любого $n$, и $omega in Sect_(n = 1)^oo Union_(k = n)^oo A_k$.
 
     Теперь доказываем лемму.
     1. $P(B) = P(Sect_(n = 1)^oo Union_(k = n)^oo A_k) <= P(Union^oo_(k = n) A_k) <= sum_(k = n)^oo P(A_k) --> 0$ как хвост сходящегося ряда.

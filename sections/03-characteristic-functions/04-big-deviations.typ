@@ -38,7 +38,7 @@
   $
     P(S_n/n >= r) <= e^(n (psi(lambda) - lambda r)).
   $
-  Заведем $I(lambda) := sup {lambda r - psi(lambda)}$ --- _функцию отклонения_. Тогда
+  Заведем $I(r) := sup_lambda {lambda r - psi(lambda)}$ --- _функцию отклонения_. Тогда
   $
     P(S_n/n >= r) <= e^(-n I(r)).
   $

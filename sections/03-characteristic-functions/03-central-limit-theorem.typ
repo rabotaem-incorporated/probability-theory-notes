@@ -30,10 +30,9 @@
   $
   Тогда
   $
-    phi_(S_n/(sigma sqrt(n))) (t) = phi_(S_n) (t/(sigma sqrt(n))) = (phi_xi_1 (t/(sigma sqrt(n))))^n = (1 - (sigma^2 t^2)/(n sigma^2) + o(t^2/(sigma^2 n)))^n -->^? e^(-t^2/2)
+    phi_(S_n/(sigma sqrt(n))) (t) = phi_(S_n) (t/(sigma sqrt(n))) = (phi_xi_1 (t/(sigma sqrt(n))))^n = (1 - (sigma^2 t^2)/(2n sigma^2) + o(t^2/(sigma^2 n)))^n -->^? e^(-t^2/2)
   $
-  --- характеристическая функция для $Nn(0, 1)$.
-  Значит
+  Логарифмируем
   $
     n ln (1 - t^2/(2n) + o(1/n)) = n (-t^2/(2n) + o(1/n)) --> -t^2/2.
   $
@@ -68,9 +67,9 @@
   $
   Тогда 
   $
-    phi_(S_n) t = product_(k = 1)^n phi_(xi_(n k)) (t) = product_(k = 1)^n (1 + (e^(i t) - 1) p_(n k)) -->^? e^(lambda (e^(i t) - 1)).
+    phi_(S_n) (t) = product_(k = 1)^n phi_(xi_(n k)) (t) = product_(k = 1)^n (1 + (e^(i t) - 1) p_(n k)) -->^? e^(lambda (e^(i t) - 1)).
   $
-  Доказываем стремление: логарифмируем,
+  Логарифмируем,
   $
     sum_(k = 1)^n ln(1 + (e^(i t) - 1) p_(n k)) -->^? lambda (e^(i t) - 1).
   $
@@ -128,21 +127,14 @@
   $
     Lind(eps, n) =
     1/D_n^2 sum_(k = 1)^n E f(xi_k - a_k) <=
-    1/D_n^2 sum_(k = 1)^n E (xi_k - a_k)^(2 + delta)/(eps^delta dot D_n^delta) newline(=)
-    1/eps^delta dot 1/(D_n^(2 + delta)) sum_(k = 1)^n E abs(f_k - a_k)^(2 + delta) =
+    1/D_n^2 sum_(k = 1)^n E |xi_k - a_k|^(2 + delta)/(eps^delta dot D_n^delta) newline(=)
+    1/eps^delta dot 1/(D_n^(2 + delta)) sum_(k = 1)^n E abs(xi_k - a_k)^(2 + delta) =
     L(delta, n)/eps^delta -->_(n -> oo) 0.
   $
 ]
 
 #th[
-  #text(rgb(0, 0, 0, 50%))[
-    Пусть $xi_1$, $xi_2$, $xi_3$, ... --- независмые, $a_n := E xi_n$, $sigma_n^2 := D xi_1 > 0$, $S_n := xi_1 + xi_2 + ... + xi_n$, $D_n^2 := sum_(k = 1)^n sigma_k^2$ конечна. Пусть
-  $
-    L(delta, n) := 1/D_n^(2 + delta) sum_(k = 1)^n E abs(xi_k - a_k)^(2 + delta) -->_(n -> oo) 0 "для некоторого" delta > 0.
-  $
-  ] (условия из теоремы Ляпунова).
-
-  Пусть $delta in (0, 1)$. Тогда
+  В предположении теоремы Ляпунова, пусть $delta in (0, 1)$. Тогда
   $
     abs(P((S_n - E S_n)/sqrt(D S_n) <= x) - Phi(x)) <= C_delta dot L(delta, n).
   $
@@ -162,7 +154,7 @@
 #th(name: "Берри-Эссеена")[
   Пусть $xi_1$, $xi_2$, $xi_3$, ... --- независмые, одинаково распределенные случайные величины, $a := E xi_1$, $sigma^2 := D xi_1$. Тогда
   $
-    abs(P((S_n - n a)/(sqrt(n) sigma) <= x) - Phi(x)) <= C (E(xi_1 - a)^3)/(sqrt(n) sigma^3).
+    abs(P((S_n - n a)/(sqrt(n) sigma) <= x) - Phi(x)) <= C (E|xi_1 - a|^3)/(sqrt(n) sigma^3).
   $
 ]
 
