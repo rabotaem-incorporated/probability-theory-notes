@@ -26,7 +26,7 @@
     5. $lim_(x -> -oo) F_xi (x) = 0$ и $lim_(x -> oo) F_xi (x) = 1$.
     6. $P_xi (xi < x) = lim_(y -> x-) F_xi (y)$ (и предел сущесвует).
     7. $F_(xi + c) (x) = F_xi (x - c)$.
-    8. $F_(c xi) (x) = F_xi (x / c)$.
+    8. $F_(c xi) (x) = F_xi (x / c)$ (при c > 0).
 ]
 
 #proof[
@@ -49,7 +49,7 @@
         $
             F_xi (x_n) = P_xi (-oo, x_n] -->_"непр. снизу" P_xi (Union_(n = 1)^oo (-oo, x_n]) = P_xi (-oo, +oo) = 1.
         $
-    6. $ F_xi (x_n) = P_xi (-oo, x_n] -->^"непр. сверху" P_xi (Union_(n = 1)^oo (-oo, x_n]) = P_xi (-oo, x) = P(xi < x). $
+    6. $ F_xi (x_n) = P_xi (-oo, x_n] -->_"непр. снизу" P_xi (Union_(n = 1)^oo (-oo, x_n]) = P_xi (-oo, x) = P(xi < x). $
     7. $ F_(xi + c) (x) = P(xi + c <= x) = P(xi <= x - c) = F_xi (x - c). $
     8. $ F_(c xi) (x) = P(c xi <= x) = P(xi <= x / c) = F_xi (x / c). $
 ]
