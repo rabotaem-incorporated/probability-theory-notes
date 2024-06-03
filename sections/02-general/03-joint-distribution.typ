@@ -102,10 +102,10 @@
             Знаем совпадение мер на $(-oo, x_1] times ... times (-oo, x_n]$, хотим доказать совпадение на ячейках. Пусть, для простоты, $n = 2$. Тогда
             $
                 P_(xi, eta) ((a, b] times (c, d]) &newline(=)
-                P_(xi, eta) ((a, b] times (-oo, d]) -
-                P_(xi, eta) ((a, b] times (-oo, c]) &-\
-                P_(xi, eta) ((a, b] times (-oo, d]) +
-                P_(xi, eta) ((a, b] times (-oo, c]) newline(=)
+                P_(xi, eta) ((-oo, b] times (-oo, d]) -
+                P_(xi, eta) ((-oo, b] times (-oo, c]) &-\
+                P_(xi, eta) ((-oo, a] times (-oo, d]) +
+                P_(xi, eta) ((-oo, a] times (-oo, c]) newline(=)
                 F_(xi, eta) (b, d) - F_(xi, eta) (b, c) - F_(xi, eta) (a, d) + F_(xi, eta) (a, c) &newline(=)
                 F_xi (b) F_eta (d) - F_xi (b) F_eta (c) - F_xi (a) F_eta (d) + F_xi (a) F_eta (c) &newline(=)
                 (F_xi (b) - F_xi (a)) (F_eta (d) - F_eta (c)) &newline(=)
