@@ -99,7 +99,7 @@
   $
   и применим Стирлинга:
   $
-    (C^n_(2n))/(12^n) binom(n, n/3, n/3, n/3) sim 1/12^n dot 4^n/sqrt(pi n) dot (sqrt(2 pi n) (n/e)^n)/((sqrt(2 pi n/3)(n/(3e))^n)^3) = 1/cancel(3^n) dot 1/sqrt(pi n) dot 3^(cancel(n) + 3/2)/(2 pi n) = C/(n^(3/2)).
+    (C^n_(2n))/(12^n) binom(n, n/3, n/3, n/3) sim 1/12^n dot 4^n/sqrt(pi n) dot (sqrt(2 pi n) (n/e)^n)/((sqrt(2 pi n/3)(n/(3e))^(n/3))^3) = 1/cancel(3^n) dot 1/sqrt(pi n) dot 3^(cancel(n) + 3/2)/(2 pi n) = C/(n^(3/2)).
   $
 
   Ряд с такими коэффициентами сходится, а значит состояние невозвратно по критерию#rf("recurrent-criterion").
