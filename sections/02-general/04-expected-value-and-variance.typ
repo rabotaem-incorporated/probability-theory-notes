@@ -72,7 +72,7 @@
 
     9. Пусть $eta = 1$, $p = s/r$. Тогда
         $
-            E (abs(xi)^r dot 1) <= ((E abs(xi)^r)^p)^(1/p) dot (E 1^s)^(1/s) = (E abs(xi)^s)^(r/s).
+            E (abs(xi)^r dot 1) <= (E abs(xi)^(r p))^(1/p) dot (E 1^s)^(1/s) = (E abs(xi)^s)^(r/s).
         $
 ]
 
@@ -90,7 +90,7 @@
 #def[
     _Медианой случайной величины_ $xi$ называется число $m$ такое, что
     $
-        P(xi >= m) >= 1/2 "и " P(xi <= m) <= 1/2.
+        P(xi >= m) >= 1/2 "и " P(xi <= m) >= 1/2.
     $
 ]
 
@@ -173,7 +173,7 @@
             D xi =&
             E xi^2 =
             1/sqrt(2pi) integral_RR x^2 e^(-x^2/2) dif x =
-            1/sqrt(2pi) (lr(x e^(-x^2/2)|)_(-oo)^(+oo) + integral_RR e^(-x^2/2) dif x) newline(=) &1/sqrt(2pi) (0 + integral_RR e^(-x^2/2) dif x) = 1/sqrt(2pi) sqrt(2pi) = 1.
+            1/sqrt(2pi) (lr(-x e^(-x^2/2)|)_(-oo)^(+oo) + integral_RR e^(-x^2/2) dif x) newline(=) &1/sqrt(2pi) (0 + integral_RR e^(-x^2/2) dif x) = 1/sqrt(2pi) sqrt(2pi) = 1.
         $
         Храбров такую базу на лекции выдал: интеграл который получается на последней строчке можно не считать, так как это плотность какого-то распределения, и она просто равна $1$.
     4. $xi sim Nn(a, sigma^2)$. Знаем, что если $nu sim Nn(0, 1)$, то $xi = a + sigma nu sim Nn(a, sigma^2)$.

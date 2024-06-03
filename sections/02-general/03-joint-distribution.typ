@@ -30,14 +30,14 @@
 ]
 
 #proof[
-    - "$==>$": $P(xi_1 in A_1, ..., xi_n in A_n) = P(xi_1 in A) dot ... dot P(xi_n in A)$. Причем,
+    - "$==>$": $P(xi_1 in A_1, ..., xi_n in A_n) = P(xi_1 in A_1) dot ... dot P(xi_n in A_n)$. Причем,
         $
             P(xi_1 in A_1, ..., xi_n in A_n) =
             P_(arrow(xi)) (A_1 times ... times A_n).
         $
         и
         $
-            P(xi_1 in A) dot ... dot P(xi_n in A) =
+            P(xi_1 in A_1) dot ... dot P(xi_n in A_n) =
             P_xi_1 (A_1) dot ... dot P_xi_n (A_n).
         $
         Значит на измеримых прямоугольниках меры $P_(arrow(xi))$ и $P_xi_1 P_xi_2 ... P_xi_n$ совпадают, а значит они совпадают и на всем пространстве.
