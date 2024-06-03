@@ -1,5 +1,6 @@
 #import "../config.typ"
 #import "@preview/cetz:0.2.0"
+#import "@preview/finite:0.3.0": automaton
 
 #let chapter_state = state("chapter", "")
 
