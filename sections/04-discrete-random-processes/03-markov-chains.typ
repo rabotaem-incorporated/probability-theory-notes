@@ -21,7 +21,26 @@
 
 #example[
   Пусть есть какой-то прибор, который либо работает, либо не работает. Если он работает, то с вероятностью $p$ он может сломаться. Если он не работает, то с вероятностью $q$ его могут починить.
-  #TODO[картинка марковской цепи]
+  #align(center)[
+    #automaton(
+      (
+        wr: (br: "p", wr: "1 - p"),
+        br: (wr: "q", br: "1 - q")
+      ),
+      initial: none,
+      final: (),
+      style: (
+        transition: (curve: 2),
+        state: (radius: 2),
+        wr-wr: (curve: 1.5),
+        br-br: (curve: 1.5),
+      ),
+      labels: (
+        wr: image("../../img/working.jpg", width: 80pt, height: 80pt),
+        br: image("../../img/not-working.jpg", width: 80pt, height: 80pt),
+      )
+    )
+  ]
 ]
 
 #notice[
