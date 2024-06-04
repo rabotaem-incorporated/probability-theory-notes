@@ -27,7 +27,7 @@
   4. $G'_xi (t) = sum_(k = 0)^oo k P(xi = k) t^(k - 1) ==> G'_xi (1) = sum_(k = 0)^oo k P(xi = k) = E xi$.
   5. $G''_xi (t) = sum_(k = 0)^oo k (k - 1) P(xi = k) t^(k - 2) ==> G''_xi (1) = sum_(k = 0)^oo k (k - 1) P(xi = k)$. Таким образом, $G''_xi (1) = E xi^2 - E xi$.
 
-  6. $G_(xi + eta) (t) = E t^(xi + eta) = E(t^xi e^eta) = E t^xi E t^eta = G_xi (t) G_eta (t)$. Для $n$ по индукции.
+  6. $G_(xi + eta) (t) = E t^(xi + eta) = E(t^xi t^eta) = E t^xi E t^eta = G_xi (t) G_eta (t)$. Для $n$ по индукции.
 ]
 
 #example[
