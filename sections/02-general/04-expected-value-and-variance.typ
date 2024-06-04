@@ -324,15 +324,15 @@
     Тогда
     $
         D xi =
-        sum_(p <= M) D xi_p + 2 sum_(p, q <= M) cov(xi_p, xi_q) <=
-        sum_(p <= M) (1/p - 1/p^2 + O(1/n)) + 2 sum_(p, q <= M) 1/n (1/p + 1/q) newline(=)
+        sum_(p <= M) D xi_p + 2 sum_(p < q <= M) cov(xi_p, xi_q) <=
+        sum_(p <= M) (1/p - 1/p^2 + O(1/n)) + 2 sum_(p < q <= M) 1/n (1/p + 1/q) newline(=)
         sum_(p <= M) 1/p - sum_(p <= M) 1/p^2 + O(M/n) + 1/n sum_(p, q <= M \ p != q) (1/p + 1/q) <=
         sum_(p <= M) 1/p + O(1) + 1/n M sum_(p <= M) 1/p <= ln ln n + O(1).
     $
     Что за событие мы оценимаем? При больших $n$,
     $
         {abs(nu(k) - ln ln n) >= omega(n) sqrt(ln ln n)} subset
-        lr(size: #1.5em, {abs(xi(k) - E xi) >= underbrace(omega(n) sqrt(ln ln n), omega(n) (D xi + O(1))) - C}) newline(subset)
+        lr(size: #1.5em, {abs(xi(k) - E xi) >= underbrace(omega(n) sqrt(ln ln n), omega(n) (sqrt(D xi) + O(1))) - C}) newline(subset)
         {abs(xi(k) - E xi) >= omega(n)/2 sqrt(D xi)}.
     $
     Применяем неравенство Чебышева:
