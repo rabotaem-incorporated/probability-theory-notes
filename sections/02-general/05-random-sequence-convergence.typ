@@ -8,7 +8,7 @@
 ]
 
 #proof[
-    Докажем для пары кусочков последовательностей $xi_1, xi_2, ..., x_m$ и $eta_1, eta_2, ..., eta_n$ независимых, $f: RR^m --> RR$, $g: RR^n --> RR$. Хотим доказать, что $f(xi_1, ..., xi_m)$ и $g(eta_1, ..., eta_n)$ независимы. Пусть $A$ и $B$ --- борелевские множества. Тогда надо доказать, что
+    Докажем для пары кусочков последовательностей $xi_1, xi_2, ..., xi_m$ и $eta_1, eta_2, ..., eta_n$ независимых, $f: RR^m --> RR$, $g: RR^n --> RR$. Хотим доказать, что $f(xi_1, ..., xi_m)$ и $g(eta_1, ..., eta_n)$ независимы. Пусть $A$ и $B$ --- борелевские множества. Тогда надо доказать, что
     $
         {f(xi_1, ..., xi_m) in A}, {g(eta_1, ..., eta_m) in B}
     $
@@ -91,7 +91,7 @@
 
     - "$3==>4$": ${xi_n > x} supset {xi > x + eps} sect {abs(xi_n - xi) < eps}$.  Взяв дополнения, ${xi_n <= x} subset {xi <= x + eps} union {abs(xi_n - xi) >= eps}$. Отсюда 
         $
-            P(xi_n <= x) <= P(xi <= x+eps) + P(abs(xi_n - xi) >= eps) ==> F_(xi_n) (x) <= F_xi (x + eps) + P(abs(xi_n - n) <= eps) newline(==>)
+            P(xi_n <= x) <= P(xi <= x+eps) + P(abs(xi_n - xi) >= eps) ==> F_(xi_n) (x) <= F_xi (x + eps) + P(abs(xi_n - xi) <= eps) newline(==>)
             limsup F_(xi_n) (x) <= F_xi (x + eps) + underbrace(limsup P(abs(xi_n - xi) >= eps), 0) = F_xi (x + eps).
         $
         С другой стороны, ${xi_n <= x} supset {xi <= x - eps} sect {abs(xi_n - xi) < eps}$, откуда ${xi_n > x} subset {xi > x + eps} union {abs(xi_n - xi) >= eps}$, и
