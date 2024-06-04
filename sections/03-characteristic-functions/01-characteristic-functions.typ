@@ -75,13 +75,15 @@
     integral_(-R - i t)^(R - i t) e^(-z^2/2) dif z +
     integral_(R - i t)^(R) e^(-z^2/2) dif z +
     integral_(R)^(-R) e^(-z^2/2) dif z +
-    integral_(-R)^(R - i t) e^(-z^2/2) dif z.
+    integral_(-R)^(-R - i t) e^(-z^2/2) dif z.
   $
-  Первый интеграл стремиться к $I$. Второй к $0$, так как
+  Первый интеграл стремится к $I$. Второй к $0$, так как
   $
     abs(integral_(R - i t)^R e^(-z^2/2) dif z) =
-    abs(i integral_(-t)^0 e^(-R^2/2) dif x) =
-    abs(i e^(-R^2/2) t) --> 0.
+    abs(i integral_(-t)^0 e^(-(R + ix)^2/2) dif x) <=
+    integral_(-t)^0 abs( e^(-(R + ix)^2/2) ) dif x =
+    integral_(-t)^0 e^(-R^2/2) e^(x^2/2) dif x <=
+    t e^(t^2/2) e^(-R^2/2) --> 0.
   $
   Третий --- это $-sqrt(2pi)$. Четвертый аналогично второму стремится к $0$. Значит $I = sqrt(2pi)$.
 
