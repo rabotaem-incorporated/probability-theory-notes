@@ -344,6 +344,6 @@
 #notice[
     Теорема Эрдеша-Каца:
     $
-        lim_(n->oo) 1/n \#{k: a <= (nu(k) - ln ln n)/(sqrt(ln ln n)) <= b} -->_(n -> oo) 1/sqrt(2pi) integral_a^b e^(-x^2/2) dif x.
+       1/n \#{k: a <= (nu(k) - ln ln n)/(sqrt(ln ln n)) <= b} -->_(n -> oo) 1/sqrt(2pi) integral_a^b e^(-x^2/2) dif x.
     $
 ]
