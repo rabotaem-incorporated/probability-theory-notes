@@ -72,7 +72,7 @@
 
     9. Пусть $eta = 1$, $p = s/r$. Тогда
         $
-            E (abs(xi)^r dot 1) <= (E abs(xi)^(r p))^(1/p) dot (E 1^s)^(1/s) = (E abs(xi)^s)^(r/s).
+            E (abs(xi)^r dot 1) <= (E abs(xi)^(r p))^(1/p) dot (E 1^q)^(1/q) = (E abs(xi)^s)^(r/s).
         $
 ]
 
