@@ -3,9 +3,9 @@
 == Центральная предельная теорема
 
 #th(name: "Центральная предельная теорема в форме Поля Леви")[
-  Пусть $xi_1$, $xi_2$, $xi_3$, ... --- независмые, одинаково распределенные случайные величины, $a := E xi_1$, $sigma^2 := D xi_1$ конечна, $S_n := xi_1 + xi_2 + ... + xi_n$. Тогда
+  Пусть $xi_1$, $xi_2$, $xi_3$, ... --- независмые, одинаково распределенные случайные величины, $a := E xi_1$, $sigma^2 := D xi_1 > 0$ конечна, $S_n := xi_1 + xi_2 + ... + xi_n$. Тогда
   $
-    P((S_n - n a)/(sigma sqrt(n)) <= x) = P((S_n - E S_n)/sqrt(D S_n) <= x) arrows Phi(x) = 1/sqrt(pi) integral_(-oo)^x e^(-t^2/2) dif t,
+    P((S_n - n a)/(sigma sqrt(n)) <= x) = P((S_n - E S_n)/sqrt(D S_n) <= x) arrows Phi(x) = 1/sqrt(2pi) integral_(-oo)^x e^(-t^2/2) dif t,
   $
   где $Phi(x)$ --- функция распределения для $Nn(0, 1)$.
 ]
@@ -52,7 +52,7 @@
 
 #th(name: "Пуассона")[
   Пусть $xi_(n 1)$, $xi_(n 2)$, ..., $xi_(n n)$ независимые бернуллевские.
-  $P(xi_(n k) = 1) = p_(n k)$. $p_(n 1) + p_(n 2) + ... + p_(n n) -->_(n->+oo) lambda in [0, +oo)$ и $max {p_(n 1), p_(n 2), ..., p_(n n)} --> 0$, $S_n = xi_(n 1) + xi_(n 2) + ... + xi_(n n)$.
+  $P(xi_(n k) = 1) = p_(n k)$. $p_(n 1) + p_(n 2) + ... + p_(n n) -->_(n->oo) lambda in [0, +oo)$ и $max {p_(n 1), p_(n 2), ..., p_(n n)} --> 0$, $S_n = xi_(n 1) + xi_(n 2) + ... + xi_(n n)$.
   Тогда $ P(S_n = k) --> (lambda^k e^(-lambda))/(k!). $
 ]
 
@@ -88,13 +88,13 @@
 ]
 
 #th(name: "Центральная предельная теорема в форме Линденберга")[
-  Пусть $xi_1$, $xi_2$, $xi_3$, ... --- независмые, $a_n := E xi_n$, $sigma_n^2 := D xi_1 > 0$, $S_n := xi_1 + xi_2 + ... + xi_n$, $D_n^2 := sum_(k = 1)^n sigma_k^2$ конечна, $eps > 0$. Обозначим
+  Пусть $xi_1$, $xi_2$, $xi_3$, ... --- независмые, $a_n := E xi_n$, $sigma_n^2 := D xi_n > 0$, $S_n := xi_1 + xi_2 + ... + xi_n$, $D_n^2 := sum_(k = 1)^n sigma_k^2$ конечна, $eps > 0$. Обозначим
   $
     op("Lind") (eps, n) := 1/D_n^2 sum_(k = 1)^n E f(xi_k - a_k) -->_(n -> +oo) 0,
   $
   где $f(x) := x^2 dot bb(1)_{abs(x) >= eps D_n}$. Тогда
   $
-    P((S_n - E S_n)/sqrt(D S_n) <= x) arrows Phi(x) = 1/sqrt(pi) integral_(-oo)^x e^(-t^2/2) dif t,
+    P((S_n - E S_n)/sqrt(D S_n) <= x) arrows Phi(x) = 1/sqrt(2pi) integral_(-oo)^x e^(-t^2/2) dif t,
   $
   где $Phi(x)$ --- функция распределения для $Nn(0, 1)$.
 ]
@@ -110,7 +110,7 @@
   $
   Тогда
   $
-    P((S_n - E S_n)/sqrt(D S_n) <= x) arrows Phi(x) = 1/sqrt(pi) integral_(-oo)^x e^(-t^2/2) dif t,
+    P((S_n - E S_n)/sqrt(D S_n) <= x) arrows Phi(x) = 1/sqrt(2pi) integral_(-oo)^x e^(-t^2/2) dif t,
   $
 ]
 
@@ -127,7 +127,7 @@
   $
     Lind(eps, n) =
     1/D_n^2 sum_(k = 1)^n E f(xi_k - a_k) <=
-    1/D_n^2 sum_(k = 1)^n E |xi_k - a_k|^(2 + delta)/(eps^delta dot D_n^delta) newline(=)
+    1/D_n^2 sum_(k = 1)^n (E abs(xi_k - a_k)^(2 + delta))/(eps^delta dot D_n^delta) newline(=)
     1/eps^delta dot 1/(D_n^(2 + delta)) sum_(k = 1)^n E abs(xi_k - a_k)^(2 + delta) =
     L(delta, n)/eps^delta -->_(n -> oo) 0.
   $

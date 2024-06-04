@@ -87,7 +87,9 @@
       E e^(i t xi_n) =
       E (cos(t xi_n) + i sin (t xi_n)) =
       E cos(t xi_n) + i E sin(t xi_n) --> \
-      E cos(t xi) + i sin (t xi) =
+      E cos(t xi) + i E sin (t xi) =
+      E (cos(t xi) + i sin (t xi)) =
+      E e^(i t xi) =
       phi(t).
     $
   
@@ -141,7 +143,7 @@
     $
     Возьмем случайную величину $eta_sigma sim Nn(0, sigma^2)$, независящую от $xi$, $xi_1$, $xi_2$, .... Положим 
     $
-      psi_n (t) := phi_(xi_n + eta_n) (t) = phi_n (t) dot phi_(eta_sigma) (t) = phi_n (t) e^(-sigma^2 t^2/2) --> phi(t) e^(-sigma^2 t^2/2) = phi_(xi + eta_sigma) (t) =: psi(t).
+      psi_n (t) := phi_(xi_n + eta_sigma) (t) = phi_n (t) dot phi_(eta_sigma) (t) = phi_n (t) e^(-sigma^2 t^2/2) --> phi(t) e^(-sigma^2 t^2/2) = phi_(xi + eta_sigma) (t) =: psi(t).
     $
     Тогда
     $
@@ -173,7 +175,7 @@
     $
     Оцениваем вероятность:
     $
-      P(abs(eta_sigma) > delta) <=^"Чебышев" (D eta_sigma)/delta^2 = sigma^2/delta^2.
+      P(abs(eta_sigma) >= delta) <=^"Чебышев" (D eta_sigma)/delta^2 = sigma^2/delta^2.
     $
     Тогда
     $

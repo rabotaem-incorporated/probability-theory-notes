@@ -269,19 +269,23 @@
 ]
 
 #follow[
-  Если $integral_RR |phi_xi (t)| dif t < +oo$, то $xi$ абсолютно непрерывна и $rho_xi (x) = 1/(2pi) integral_RR e^(-i t x) phi_xi (t) dif t$ --- эта штука называется преобразованием Фурье.
+  Если $integral_RR |phi_xi (t)| dif t < +oo$, то $xi$ абсолютно непрерывна и 
+  $
+    rho_xi (x) = 1/(2pi) integral_RR e^(-i t x) phi_xi (t) dif t.
+  $
+  Эта штука называется _преобразованием Фурье_.
 ]
 
 #proof[
   $
     integral_(-oo)^(+oo) (e^(-i a t) - e^(-i b t))/(i t) phi_xi (t) dif t
   $
-  абсолютно сходится: под интегралом стоит ограниченная функция. Значит можно писать интеграл из теоремы об обращении даже не в смысле главного значения. Тогда
+  абсолютно сходится, как обсуждалось выше, а так как все точки --- точки непрерывности случайной величины, можно писать интеграл из теоремы об обращении даже не в смысле главного значения. Тогда
   $
     P(a <= xi <= b) =
     1/(2pi) integral_RR (e^(-i a t) - e^(-i b t))/(i t) phi_xi (t) dif t =
     1/(2pi) integral_RR integral_a^b e^(-i t u) phi_xi (t) dif u dif t newline(=^"Фубини")
-     integral_a^b underbrace(1/(2pi) integral_RR e^(-i t u) phi_xi (t) dif t, p_xi (u)) dif u =
+     integral_a^b underbrace(1/(2pi) integral_RR e^(-i t u) phi_xi (t) dif t, := p_xi (u)) dif u =
     integral_a^b p_xi (u) dif u.
   $
   Значит $p_xi$ --- плотность меры $P_xi$. 
