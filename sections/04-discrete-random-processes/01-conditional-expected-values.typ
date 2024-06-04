@@ -23,20 +23,20 @@
 ]
 
 #def[
-  Пусть $Omega = usb A_n$ --- разбиение $amogus$, $P(A_n) > 0$. _Условным матожиданием относительно разбиения_ называется
+  Пусть $Omega = usb A_n$ --- разбиение $Pi$, $P(A_n) > 0$. _Условным матожиданием относительно разбиения_ называется
   $
-    E(xi | amogus) := sum E(xi | A_n) bb(1)_(A_n) = sum E(xi bb(1)_(A_n))/P(A_n) bb(1)_(A_n).
+    E(xi | Pi) := sum E(xi | A_n) bb(1)_(A_n) = sum E(xi bb(1)_(A_n))/P(A_n) bb(1)_(A_n).
   $
-  Это случайная величина, уже не число.
+  В отличие от условного матожидания при условии, это случайная величина.
 ]
 
 #prop[
-  $E(E(xi | amogus)) = E xi$.
+  $E(E(xi | Pi)) = E xi$.
 ]
 
 #proof[
   $
-    E(E(xi | amogus)) =
+    E(E(xi | Pi)) =
     E(sum (E(xi bb(1)_(A_n)))/(P(A_n)) bb(1)_(A_n)) =
     sum E ((E (xi bb(1)_(A_n)))/P(A_n) bb(1)_(A_n)) newline(=)
     sum E(xi bb(1)_(A_n))/P(A_n) E bb(1)_(A_n) =

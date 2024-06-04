@@ -28,11 +28,11 @@
   $
   Знаем
   $
-    E e^(lambda S_n) = E e^(lambda sum xi_k) = E product e^(lambda xi_k) = product E e^(lambda xi_k) = (E e^(lambda xi_1))^n
+    E e^(lambda S_n) = E e^(lambda sum xi_k) = E product e^(lambda xi_k) = product E e^(lambda xi_k) = (E e^(lambda xi_1))^n.
   $
   Поэтому
   $
-   P(S_n/n >= r) <= (E e^(lambda S_n))/(e^(lambda r n)) = (E e^(lambda xi_1)/(e^(lambda r)))^n.
+   P(S_n/n >= r) <= (E e^(lambda S_n))/(e^(lambda r n)) = ((E e^(lambda xi_1))/(e^(lambda r)))^n.
   $
   Заведем $psi(lambda) := ln E e^(lambda xi_1)$. Тогда, переписав что выше,
   $
@@ -49,7 +49,7 @@
   $
     E e^(lambda xi) =
     1/sqrt(2pi) integral_RR e^(lambda t) e^(-t^2/2) dif t =
-    e^(lambda^2/2)/sqrt(2pi) integral_RR e^(-(t - lambda)^2)/2 = e^(lambda^2/2) ==> psi(lambda) = lambda^2/2.
+    e^(lambda^2/2)/sqrt(2pi) integral_RR e^(-(t - lambda)^2)/2 dif t = e^(lambda^2/2) ==> psi(lambda) = lambda^2/2.
   $
   Значит $I(lambda) = lambda r - lambda^2/2$ достигает максимума при $lambda = r$, и $I(r) = r^2/2$.
 
