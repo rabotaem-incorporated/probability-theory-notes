@@ -110,7 +110,7 @@
 #proof[
     $D S_n = sum_(k = 1)^n D_(xi_k) <= n M$, так как величины некоррелированны. По неравентсву Чебышева,
     $
-        P(abs(S_n/n - E S_n/n) >= eps) <= (D(S_n/n)) / eps^2 <= (D S_n)/(n^2 eps) <= (n M)/(n^2 eps) = M/(eps n) --> 0.
+        P(abs(S_n/n - E S_n/n) >= eps) <= (D(S_n/n)) / eps^2 <= (D S_n)/(n^2 eps^2) <= (n M)/(n^2 eps^2) = M/(eps^2 n) --> 0.
     $
 ]
 
