@@ -115,7 +115,7 @@
   $
   Если $abs(xi(omega) h) >= 1$, то $1/abs(h) <= abs(xi)$, и все произведение не больше $2 abs(xi)^(k + 1)$. Если $abs(xi(omega) h) < 1$, то
   $
-    abs(xi)^k dot abs((e^(i h xi) - 1) / h) = abs(xi)^(k + 1) dot abs((e^(i h xi) - 1)/(xi h)) <= C abs(xi)^(k + 1).
+    abs(xi)^k dot abs((e^(i h xi) - 1) / h) = abs(xi)^(k + 1) dot abs((e^(i h xi) - 1)/(xi h)) = abs(xi)^(k + 1) dot abs((1 + O(xi h) - 1)/(xi h)) <= C abs(xi)^(k + 1).
   $
 ]
 
