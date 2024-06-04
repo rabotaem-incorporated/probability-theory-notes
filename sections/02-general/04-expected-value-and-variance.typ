@@ -114,7 +114,7 @@
 ]
 
 #def[
-    _Дисперсия случайной величины_, $D xi$ или $op("Var") eps$, это
+    _Дисперсия случайной величины_, $D xi$ или $op("Var") xi$, это
     $
         D xi = E (xi - E xi)^2.
     $
@@ -175,7 +175,7 @@
             1/sqrt(2pi) integral_RR x^2 e^(-x^2/2) dif x =
             1/sqrt(2pi) (lr(-x e^(-x^2/2)|)_(-oo)^(+oo) + integral_RR e^(-x^2/2) dif x) newline(=) &1/sqrt(2pi) (0 + integral_RR e^(-x^2/2) dif x) = 1/sqrt(2pi) sqrt(2pi) = 1.
         $
-        Храбров такую базу на лекции выдал: интеграл который получается на последней строчке можно не считать, так как это плотность какого-то распределения, и она просто равна $1$.
+        Храбров базу на лекции выдал: интеграл который получается на последней строчке можно не считать, так как это плотность какого-то распределения, и она просто равна $1$.
     4. $xi sim Nn(a, sigma^2)$. Знаем, что если $nu sim Nn(0, 1)$, то $xi = a + sigma nu sim Nn(a, sigma^2)$.
         $
             E xi = E (a + sigma nu) = a + sigma E nu = a,\
@@ -317,7 +317,7 @@
         E xi_p - (E xi_p)^2 = (1/p + O(1/n)) - (1/p + O(1/n))^2 =
         1/p - 1/p^2 + O(1/n),\
         cov(xi_p, xi_q) =
-        E(xi_p xi_q) - E xi_p E xi_q =
+        E(xi_p xi_q) - E xi_p E xi_q <=
         P(xi_p xi_q = 1) - (1/p - 1/n)(1/q - 1/n) newline(=)
         floor(n/(p q))/n - (1/p - 1/n)(1/q - 1/n) <= 1/n (1/p + 1/q).
     $
@@ -325,7 +325,7 @@
     $
         D xi =
         sum_(p <= M) D xi_p + 2 sum_(p, q <= M) cov(xi_p, xi_q) <=
-        sum_(p <= M) (1/p - 1/p^2) + 2 sum_(p, q <= M) 1/n (1/p + 1/q) newline(=)
+        sum_(p <= M) (1/p - 1/p^2 + O(1/n)) + 2 sum_(p, q <= M) 1/n (1/p + 1/q) newline(=)
         sum_(p <= M) 1/p - sum_(p <= M) 1/p^2 + O(M/n) + 1/n sum_(p, q <= M \ p != q) (1/p + 1/q) <=
         sum_(p <= M) 1/p + O(1) + 1/n M sum_(p <= M) 1/p <= ln ln n + O(1).
     $

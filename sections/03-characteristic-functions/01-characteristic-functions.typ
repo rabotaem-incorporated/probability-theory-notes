@@ -20,7 +20,7 @@
 ]
 
 #def[
-  Если $xi$ --- вещественно-значная случайная величина, то $phi_xi (t) := E e^(i t xi)$ называется _характеристической функцией_ $xi$.
+  Если $xi$ --- вещественнозначная случайная величина, то $phi_xi (t) := E e^(i t xi)$ называется _характеристической функцией_ $xi$.
 ]
 
 #props[
@@ -150,7 +150,7 @@
     integral_RR lim_(h -> 0) (sin(x h)/h)^2 dif P_xi (x) <=^"Фату"
     liminf_(h -> 0) integral_RR (sin(x h)/h)^2 dif P_xi (x) newline(=)
     liminf_(h -> 0) -integral_RR (e^(2 i h x) + e^(-2i h x) - 2)/(4h^2) dif P_xi (x) =
-    liminf_(h -> 0) -1/(4h^2) integral_RR e^(2 i h x) + e^(-2i h x) - 2 dif P_xi (x) newline(=)
+    liminf_(h -> 0) -1/(4h^2) integral_RR (e^(2 i h x) + e^(-2i h x) - 2) dif P_xi (x) newline(=)
     liminf_(h -> 0) -1/(4h^2) (phi_xi (2h) + phi_xi (-2h) - 2).
   $
   Разложим $phi_xi (t)$ в ряд Тейлора:
@@ -213,7 +213,7 @@
       T(x - 1) --> -oo,
     ) ==> Phi_T (x) -->_(T -> +oo) integral_RR (2 sin y)/y dif y = 2 pi.
   $
-  Значит $Phi_T (x) --> 2pi dot bb(1) (x)$ при $x != plus.minus 1$. Тогда
+  Значит $Phi_T (x) --> 2pi dot bb(1)_((-1, 1)) (x)$ при $x != plus.minus 1$. Тогда
   $
     lim_(T --> +oo) 1/(2pi) integral_(-T)^T (e^(i t) - e^(-i t))/(i t) phi_xi (t) dif t =
     lim_(T -> +oo) 1/(2pi) integral_RR Phi_T (x) dif P_xi (x) newline(=^?)

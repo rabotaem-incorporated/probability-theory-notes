@@ -109,16 +109,22 @@
     $
     Смотрим на дроби:
     $
-        #box(width: 5pt) k / (n p) = (n p + x sqrt(n p q)) / (n p) = 1 + x sqrt(q/(n p)) ==> ln(k/(n p)) = ln(1 + x sqrt(q/(n p))) = x sqrt(q/(n p)) - x^2 q/(2n p) + O(1/(n sqrt(n))).\
-        #box(width: 40pt) (n - k)/(n q) = (n q - x sqrt(n p q)) / (n q) = 1 - x sqrt(p/(n q)) ==> ln((n - k)/(n q)) = ln(1 - x sqrt(p/(n q))) = -x sqrt(p/(n q)) - x^2 p/(2n q) + O(1/(n sqrt(n))).
+        text(size: #0.9em,
+            k / (n p) = (n p + x sqrt(n p q)) / (n p) = 1 + x sqrt(q/(n p)) ==> ln(k/(n p)) = ln(1 + x sqrt(q/(n p))) = x sqrt(q/(n p)) - x^2 q/(2n p) + O(1/(n sqrt(n))).
+            \
+            (n - k)/(n q) = (n q - x sqrt(n p q)) / (n q) = 1 - x sqrt(p/(n q)) ==> ln((n - k)/(n q)) = ln(1 - x sqrt(p/(n q))) = -x sqrt(p/(n q)) - x^2 p/(2n q) + O(1/(n sqrt(n))).
+        )
     $
 
     Подставляем в сумму:
     $
-        k ln (k / (n p)) + (n - k) ln ((n - k) / (n q)) = \
-        #box(width : 20pt) (n p + x sqrt(n p q))(x sqrt(q/(n p)) - x^2 q/(2n p) + O(1/(n sqrt(n)))) + (n q - x sqrt(n p q))(-x sqrt(p/(n q)) - x^2 p/(2n q) + O(1/(n sqrt(n)))) =
-        \
-        #box(width : 52pt) x sqrt(n p q) + x^2 q - (x^2 q)/2 - x sqrt(n p q) + x^2 p - (x^2 p)/2 + O(1/sqrt(n)) = x^2 (p + q - p/2 - q/2) + O(1/sqrt(n)) = x^2/2 + O(1/sqrt(n))
+        text(size: #0.9em,
+            k ln (k / (n p)) + (n - k) ln ((n - k) / (n q)) = 
+            \
+            (n p + x sqrt(n p q))(x sqrt(q/(n p)) - x^2 q/(2n p) + O(1/(n sqrt(n)))) + (n q - x sqrt(n p q))(-x sqrt(p/(n q)) - x^2 p/(2n q) + O(1/(n sqrt(n)))) =
+            \
+            x sqrt(n p q) + x^2 q - (x^2 q)/2 - x sqrt(n p q) + x^2 p - (x^2 p)/2 + O(1/sqrt(n)) = x^2 (p + q - p/2 - q/2) + O(1/sqrt(n)) = x^2/2 + O(1/sqrt(n)).
+        )
     $
 ]
 
@@ -304,7 +310,7 @@
     $
     и
     $
-        C_n^k dot 2^(1 - C_k^2) <= n^k/k! dot 2^(1 - C_k^2) <= 2/k! dot (2^(k/2))^k dot 2^(-(k(k - 1))/2) = 2/k! dot (2^(k/2 - (k - 1)/2))^k < 2^(1+k/2)/k! <= 1.
+        C_n^k dot 2^(1 - C_k^2) <= n^k/k! dot 2^(1 - C_k^2) <= (2^(k/2))^k/k! dot 2^(1-(k(k - 1))/2) = 2/k! dot (2^(k/2 - (k - 1)/2))^k < 2^(1+k/2)/k! <= 1.
     $
     Для $k = 3$ это верно, и для больших $k$ тоже по индукции.
 ]
