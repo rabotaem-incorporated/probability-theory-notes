@@ -5,7 +5,7 @@ import subprocess
 
 @dataclass
 class Config:
-    enable_ticket_references: bool = False
+    enable_ticket_references: bool = True
     monochrome: bool = False
     debug: bool = False
     references: bool = True
@@ -28,15 +28,15 @@ targets = {
     "probability-theory-default": Config(
         
     ),
-    "probability-theory-no-references": Config(
-        references=False
+    "probability-theory-no-tickets": Config(
+        enable_ticket_references=False,
     ),
-    "probability-theory-debug": Config(
-        debug=True,
-    ),
-    "probability-theory-monochrome": Config(
-        monochrome=True,
-    ),
+    # "probability-theory-debug": Config(
+    #     debug=True,
+    # ),
+    # "probability-theory-monochrome": Config(
+    #     monochrome=True,
+    # ),
 }
 
 any_failed = False

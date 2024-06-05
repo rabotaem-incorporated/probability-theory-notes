@@ -343,7 +343,7 @@
 
   let width = 0.7cm
   let offset = 0.5cm
-  let color = if not config.monochrome { blue.lighten(60%) } else { gray }
+  let color = if not config.monochrome { purple.lighten(60%) } else { gray }
 
   if step-fn != none {
     ticket-counter.update(step-fn)
@@ -355,10 +355,10 @@
     rect(stroke: none, width: 100%, par[
       #align(end, text(size: 0.75em, fill: color.darken(30%))[
         Билет #ticket-counter.display();.
-        #name.
+        #name
       ])
 
-      #v(-0.7em)
+      #v(-0.9em)
 
       #line(length: 100% + width + offset, stroke: (
         paint: color,
