@@ -91,7 +91,7 @@
 
     - "$3==>4$": ${xi_n > x} supset {xi > x + eps} sect {abs(xi_n - xi) < eps}$.  Взяв дополнения, ${xi_n <= x} subset {xi <= x + eps} union {abs(xi_n - xi) >= eps}$. Отсюда 
         $
-            P(xi_n <= x) <= P(xi <= x+eps) + P(abs(xi_n - xi) >= eps) ==> F_(xi_n) (x) <= F_xi (x + eps) + P(abs(xi_n - xi) <= eps) newline(==>)
+            P(xi_n <= x) <= P(xi <= x+eps) + P(abs(xi_n - xi) >= eps) ==> F_(xi_n) (x) <= F_xi (x + eps) + P(abs(xi_n - xi) >= eps) newline(==>)
             limsup F_(xi_n) (x) <= F_xi (x + eps) + underbrace(limsup P(abs(xi_n - xi) >= eps), 0) = F_xi (x + eps).
         $
         С другой стороны, ${xi_n <= x} supset {xi <= x - eps} sect {abs(xi_n - xi) < eps}$, откуда ${xi_n > x} subset {xi > x + eps} union {abs(xi_n - xi) >= eps}$, и
