@@ -51,7 +51,7 @@
     1/sqrt(2pi) integral_RR e^(lambda t) e^(-t^2/2) dif t =
     e^(lambda^2/2)/sqrt(2pi) integral_RR e^(-(t - lambda)^2)/2 dif t = e^(lambda^2/2) ==> psi(lambda) = lambda^2/2.
   $
-  Значит $I(lambda) = lambda r - lambda^2/2$ достигает максимума при $lambda = r$, и $I(r) = r^2/2$.
+  Значит $lambda r - lambda^2/2$ достигает максимума при $lambda = r$, и $I(r) = r^2/2$.
 
   Значит $P(S_n/n >= r) <= e^(-n r^2/2)$.
 ]
@@ -61,7 +61,7 @@
   $
     psi(lambda) = ln E e^(lambda xi) = ln (integral_0^(+oo) e^(lambda t) e^(-t) dif t) = ln lr((e^((lambda - 1) t))/(lambda - 1)|)_(t = 0)^(t = +oo) = ln 1/(1 - lambda) = -ln (1 - lambda),
   $
-  Тогда $I(lambda) = lambda r + ln (1 - lambda)$ имеет максимум при $lambda = 1 - 1/r$ и максимум равен $r - 1 - ln r$. Значит
+  Тогда $lambda r + ln (1 - lambda)$ имеет максимум при $lambda = 1 - 1/r$ и максимум равен $r - 1 - ln r$. Значит
   $
     P(S_n/n >= r) <= e^(-n (r - 1 - ln r)).
   $
