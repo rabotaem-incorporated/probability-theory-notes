@@ -39,9 +39,9 @@ $
 ]
 
 #th[
-  Пусть $E xi_1 = 1$, $D xi_1 = b > 0$, $q_n$ --- вероятность вырождения к $n$-ому шагу. $gamma_n := q_(n + 1) - q_n$ --- вероятность вырождения от $n$-го к $(n + 1)$-му поколению. Тогда
+  Пусть $E xi_1 = 1$, $D xi_1 = sigma^2 > 0$, $q_n$ --- вероятность вырождения к $n$-ому шагу. $gamma_n := q_(n + 1) - q_n$ --- вероятность вырождения от $n$-го к $(n + 1)$-му поколению. Тогда
   $
-    gamma_n sim 2/(b n^2), quad 1 - q_n sim 2/(b n).
+    gamma_n sim 2/(sigma^2 n^2), quad 1 - q_n sim 2/(sigma^2 n).
   $
 ]
 
@@ -56,11 +56,11 @@ $
   $
     tilde(F) (0) &= 1 - F(1) = 0, \
     F' (x) = (1 - F(1 - x))' = F'(1 - x) ==> tilde(F)' (0) &= F' (1) = E xi_1 = 1, \
-    F''(x) = -F''(1 - x) ==> tilde(F)'' (0) &= -F''(1) = -D xi_1 = -b.
+    F''(x) = -F''(1 - x) ==> tilde(F)'' (0) &= -F''(1) = -D xi_1 = -sigma^2.
   $
   Тогда
   $
-    tilde(F) (x) = x - (b x^2)/2 + o(x^2).
+    tilde(F) (x) = x - (sigma^2 x^2)/2 + o(x^2).
   $
   Рассмотрим $a_n = 1/p_n$, а точнее 
   $
@@ -68,13 +68,13 @@ $
     1/p_(n + 1) - 1/p_n =
     (p_n - p_(n + 1))/(p_(n + 1) p_n) =
     (p_n - tilde(F) (p_n))/(p_n tilde(F) (p_n)) =
-    (p_n - (p_n - (b p_n^2)/2 + o(p^2)))/(p_n (p_n + o(p_n))) newline(=)
-    ((b p_n^2)/2 + o(p_n^2))/(p_n^2 + o(p_n^2)) = (b/2 + o(1))/(1 + o(1)) = b/2 + o(1) ==> a_n sim (n b)/2 ==> p_n = 1/a_n sim 2/(n b).
+    (p_n - (p_n - (sigma^2 p_n^2)/2 + o(p^2)))/(p_n (p_n + o(p_n))) newline(=)
+    ((sigma^2 p_n^2)/2 + o(p_n^2))/(p_n^2 + o(p_n^2)) = (sigma^2/2 + o(1))/(1 + o(1)) = sigma^2/2 + o(1) ==> a_n sim (n sigma^2)/2 ==> p_n = 1/a_n sim 2/(n sigma^2).
   $
   по теореме Штольца.
 
   Распишем $gamma$:
   $
-    gamma_n = q_(n + 1) - q_n = (1 - p_(n + 1)) - (1 - p_n) = p_n - p_(n + 1) = p_n - tilde(F)(p_n) newline(=) (b p_n^2)/2 + o(p_n^2) sim (b p_n^2)/2 sim b/2 dot (2/(n b))^2 = 2/(b n^2).
+    gamma_n = q_(n + 1) - q_n = (1 - p_(n + 1)) - (1 - p_n) = p_n - p_(n + 1) = p_n - tilde(F)(p_n) newline(=) (sigma^2 p_n^2)/2 + o(p_n^2) sim (sigma^2 p_n^2)/2 sim sigma^2/2 dot (2/(n sigma^2))^2 = 2/(sigma^2 n^2).
   $
 ]
