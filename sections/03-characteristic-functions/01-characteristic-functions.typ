@@ -263,7 +263,7 @@
 
   Если $b in A$, то рассмотрим $b_n arrow.br b$, $b_n in.not A$. Там
   $
-    P_xi (b) <-- F_xi (b_n) = F_eta (b_n) --> P_eta (b).
+    F_xi (b) <-- F_xi (b_n) = F_eta (b_n) --> F_eta (b).
   $
   Значит $F_xi = F_eta$ везде, и $P_xi = P_eta$. 
 ]
@@ -296,7 +296,7 @@
   $
     xi = a_0 + sum_(k = 1)^n c_k xi_k sim Nn(a, sigma^2),
   $
-  где $a = a_0 + sum_(k = 1)^oo c_k a_k$, а $sigma^2 = sum_(k = 1)^n c_k^2 sigma_k^2$.
+  где $a = a_0 + sum_(k = 1)^n c_k a_k$, а $sigma^2 = sum_(k = 1)^n c_k^2 sigma_k^2$.
 ]
 
 #proof[
