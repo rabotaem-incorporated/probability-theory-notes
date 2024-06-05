@@ -104,9 +104,9 @@
   $
     phi_xi^((k + 1)) (t) =
     lim_(h -> 0) (phi_xi^((k)) (t + h) - phi_xi^((k)) (t)) / h =
-    lim_(h -> 0) (E (i xi)^k e^(i (t + h) xi) - E ((i xi)^k e^(i t xi))) / h newline(=)
+    lim_(h -> 0) (E (i xi)^k e^(i (t + h) xi) - E (i xi)^k e^(i t xi)) / h newline(=)
     lim_(h -> 0) E((i xi)^k dot e^(i t xi) dot (e^(i h xi) - 1)/h) =
-    lim integral_Omega ((i xi)^k) dot e^(i t xi) dot (e^(i h xi) - 1)/h dif P newline(=^?)
+    lim_(h -> 0) integral_Omega (i xi)^k dot e^(i t xi) dot (e^(i h xi) - 1)/h dif P newline(=^?)
     integral_Omega (i xi)^k dot e^(i t xi) dot underbrace(lim_(h -> 0) (e^(i h xi) - 1)/h, i xi) dif P =
     E ((i xi)^(k + 1) e^(i t xi)).
   $
@@ -259,7 +259,7 @@
 #proof[
   Пусть $A:= {x in R: P(xi = x) > 0 "или" P(eta = x) > 0}$ --- не более чем счетное множество.
 
-  Если $a, b in.not A$, то $P_xi ([a,b]) = P_eta ([a,b])$. Тогда функции распределения совпадают в точках не из $A$, так как для $a_n arrow.br -oo$, $a in.not A$: $ F_xi (b) = lim_(a_n -> -oo) P_xi ([a_n, b]) = lim P_eta ([a_n, b]) = F_eta (b). $
+  Если $a, b in.not A$, то $P_xi ([a,b]) = P_eta ([a,b])$. Тогда функции распределения совпадают в точках не из $A$, так как для $a_n arrow.br -oo$, $a in.not A$: $ F_xi (b) = lim_(a_n -> -oo) P_xi ([a_n, b]) = lim_(a_n -> -oo) P_eta ([a_n, b]) = F_eta (b). $
 
   Если $b in A$, то рассмотрим $b_n arrow.br b$, $b_n in.not A$. Там
   $
