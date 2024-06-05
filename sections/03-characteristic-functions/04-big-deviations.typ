@@ -49,7 +49,7 @@
   $
     E e^(lambda xi) =
     1/sqrt(2pi) integral_RR e^(lambda t) e^(-t^2/2) dif t =
-    e^(lambda^2/2)/sqrt(2pi) integral_RR e^(-(t - lambda)^2)/2 dif t = e^(lambda^2/2) ==> psi(lambda) = lambda^2/2.
+    e^(lambda^2/2)/sqrt(2pi) integral_RR e^(-(t - lambda)^2/2) dif t = e^(lambda^2/2) ==> psi(lambda) = lambda^2/2.
   $
   Значит $lambda r - lambda^2/2$ достигает максимума при $lambda = r$, и $I(r) = r^2/2$.
 
