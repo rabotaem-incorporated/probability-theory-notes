@@ -88,11 +88,11 @@
 ]
 
 #th(name: "Центральная предельная теорема в форме Линденберга")[
-  Пусть $xi_1$, $xi_2$, $xi_3$, ... --- независмые, $a_n := E xi_n$, $sigma_n^2 := D xi_n > 0$, $S_n := xi_1 + xi_2 + ... + xi_n$, $D_n^2 := sum_(k = 1)^n sigma_k^2$ конечна, $eps > 0$. Обозначим
+  Пусть $xi_1$, $xi_2$, $xi_3$, ... --- независмые, $a_n := E xi_n$, $sigma_n^2 := D xi_n > 0$, $S_n := xi_1 + xi_2 + ... + xi_n$, $D_n^2 := sum_(k = 1)^n sigma_k^2$ конечна. Тогда если для любого $eps > 0$
   $
     op("Lind") (eps, n) := 1/D_n^2 sum_(k = 1)^n E f(xi_k - a_k) -->_(n -> +oo) 0,
   $
-  где $f(x) := x^2 dot bb(1)_{abs(x) >= eps D_n}$. Тогда
+  где $f(x) := x^2 dot bb(1)_{abs(x) >= eps D_n}$, то
   $
     P((S_n - E S_n)/sqrt(D S_n) <= x) arrows Phi(x) = 1/sqrt(2pi) integral_(-oo)^x e^(-t^2/2) dif t,
   $

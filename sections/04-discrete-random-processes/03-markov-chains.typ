@@ -198,9 +198,10 @@
 
 #proof[
   Положим
-  - $P(t) := sum_(n = 0)^oo p_(a, a) (n) t^n$.
-
-  - $F(t) := sum_(n = 0)^oo f_a (n) t^n$.
+  $
+    P(t) := sum_(n = 0)^oo p_(a, a) (n) t^n, quad
+    F(t) := sum_(n = 0)^oo f_a (n) t^n.
+  $
 
   Тогда при $n >= 1$
   $
