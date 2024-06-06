@@ -48,7 +48,7 @@
 ]
 
 #th(name: "Прохорова")[
-    Если $n p = lambda$, то
+    Если $n p_n = lambda$, то
     $
         sum_(k = 0)^oo abs(P(S_n = k) - (lambda^k e^(-lambda))/k!) <=
         (2 lambda)/n min{2, lambda}.
