@@ -90,7 +90,7 @@
         $
             xi_1, ..., xi_n "независимы" <==> p_(arrow(xi)) (t) = p_(xi_1) (t_1) ... p_(xi_n) (t_n),
         $
-        причем абсолюная непрерывность и независимость гарантируют наличие совместной плотности.
+        причем абсолютная непрерывность и независимость гарантируют наличие совместной плотности.
 ]
 
 #proof[
@@ -210,8 +210,8 @@
 #proof[
     Пусть $B subset RR^2$ такое, что $(x, y) in B$ тогда и только тогда, когда $x + y in A$
     $
-        P_(xi + eta) (t) = P(xi + eta in A) = P ((xi, eta) in B)) = P_(xi, eta) (B) = integral_(RR^2) bb(1)_B (x, y) dif P_(xi, eta) (x, y) newline(=)
-        integral_(RR^2) bb(1)_A (x + y) dif P_(xi) (x) dif P_(eta) (y) = P_(xi) * P_(eta) (t).
+        P_(xi + eta) (A) = P(xi + eta in A) = P ((xi, eta) in B)) = P_(xi, eta) (B) = integral_(RR^2) bb(1)_B (x, y) dif P_(xi, eta) (x, y) newline(=)
+        integral_(RR^2) bb(1)_A (x + y) dif P_(xi) (x) dif P_(eta) (y) = P_(xi) * P_(eta) (A).
     $
 ]
 

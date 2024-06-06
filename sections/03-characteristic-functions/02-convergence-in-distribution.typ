@@ -27,7 +27,7 @@
 ]
 
 #proof[
-  Сущесвуют $a$ и $b$ такие, что $F(a) < eps$, $F(b) > 1 - eps$, в частности $F(b) - F(a) > 1 - 2eps$. Тогда при больших $n$, $F_n (b) - F_n (a) > 1 - 3eps$, $F_n (a) < 3 eps$.
+  Сущесвуют $a$ такая, что $F(a) < eps$. Тогда при больших $n$, $F_n (a) < 3 eps$.
 
   Возьмем $x in RR$:
   $
@@ -46,7 +46,7 @@
   Следующие условия равносильны:
   1. $xi_n$ сходится к $xi$ по распределению.
   2. для любого $U subset RR$ открытого, $liminf P(xi_n in U) >= P(xi in U)$.
-  3. для любого $A subset RR$ замкнутого, $limsup P(xi_n in U) <= P(xi in A)$.
+  3. для любого $A subset RR$ замкнутого, $limsup P(xi_n in A) <= P(xi in A)$.
   4. для любого $B subset RR$ регурярного борелевского, $lim P(xi_n in B) = P(xi in B)$.
   5. для любого $B subset RR$ регурярного борелевского, $lim E bb(1)_B (xi_n) = E bb(1)_B (xi)$.
   6. для любой $f in C(RR)$ непрерывной ограниченной $lim E f(xi_n) = E f(xi)$.
@@ -187,9 +187,9 @@
     $
       F(x - 2delta) - 2sigma^2/delta^2 <=^(B(x-2 delta))
       G_sigma (x - delta) - sigma^2/delta^2 =
-      liminf (G_(n sigma) (x - delta) - sigma^2/delta^2) <=
+      liminf (G_(n sigma) (x - delta) - sigma^2/delta^2) <=^(A(x))
       liminf F_n (x) newline(<=)
-      limsup F_n (x) <=
+      limsup F_n (x) <=^(B(x))
       limsup (G_(n sigma) (x + delta) + sigma^2/delta^2) =
       G_sigma (x + delta) + sigma^2/delta^2 <=^(A(x + 2delta)) F(x + 2 delta) + 2 sigma^2/delta^2.
     $
