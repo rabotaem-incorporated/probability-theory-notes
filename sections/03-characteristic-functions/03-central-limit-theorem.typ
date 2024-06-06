@@ -46,7 +46,7 @@
 #(make_theorem("Интерлюдия"))[
   Посчитам характеристическую функцию для распределения Пуассона. Фиксируем $lambda > 0$.
   $
-    phi_xi (t) = E e^(i t xi) = sum_(n = 0)^oo e^(i t n) P(xi = n) = sum_(n = 0)^oo e^(i t h) dot (lambda^n e^(-lambda))/n! = e^(-lambda) sum_(n = 0)^oo (e^(i t) lambda)^n/n! = e^(-lambda) e^(e^(i t) lambda) = e^(lambda (e^(i t) - 1)).
+    phi_xi (t) = E e^(i t xi) = sum_(n = 0)^oo e^(i t n) P(xi = n) = sum_(n = 0)^oo e^(i t n) dot (lambda^n e^(-lambda))/n! = e^(-lambda) sum_(n = 0)^oo (e^(i t) lambda)^n/n! = e^(-lambda) e^(e^(i t) lambda) = e^(lambda (e^(i t) - 1)).
   $
 ]
 
@@ -63,7 +63,7 @@
 #proof[
   Покажем, что $S_n$ сходится по распределению к $op("Poisson") (lambda)$.
   $
-    phi_(xi_(n k)) (t) = E e^(-i t xi_(n k)) = P(xi_(n k) = 0) + e^(i t) P(xi_(n k) = 1) = 1 - p_(n k) + e^(i t) p_(n k) = 1 + (e^(i t) - 1) p_(n k).
+    phi_(xi_(n k)) (t) = E e^(i t xi_(n k)) = P(xi_(n k) = 0) + e^(i t) P(xi_(n k) = 1) = 1 - p_(n k) + e^(i t) p_(n k) = 1 + (e^(i t) - 1) p_(n k).
   $
   Тогда 
   $
