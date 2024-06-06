@@ -159,7 +159,7 @@
     $
     Тогда
     $
-      G_(n sigma) (b) - G_(n sigma) (a) --> G_sigma (b) - G_sigma (a) space (forall a, b in RR) ==> G_n --> G "поточечно".
+      G_(n sigma) (b) - G_(n sigma) (a) --> G_sigma (b) - G_sigma (a) space (forall a, b in RR) ==> G_(n sigma) --> G_sigma "поточечно".
     $
     Возьмем $delta > 0$, тогда
     $
