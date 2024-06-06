@@ -367,7 +367,7 @@
       
       #place(dy: -1cm)[#hide(name)<ticket>]
 
-      #link(<ticket-reference>, place(
+      #let tag = place(
         dx: offset,
         end,
       )[
@@ -387,7 +387,16 @@
             #move(dy: -1.6em, text(size: 0.5em)[билет])
           ], center)
         ))
-      ])
+      ]
+
+      #context {
+        let target = query(<ticket-reference>)
+        if target.len() == 0 {
+          tag
+        } else {
+          link(<ticket-reference>, tag)
+        }
+      }
     ]
   ))
 
